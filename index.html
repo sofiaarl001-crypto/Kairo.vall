@@ -139,6 +139,7 @@
             <div class="flex flex-wrap justify-center gap-2 mt-8">
                 <button onclick="filterCategory('all')" class="cat-btn active px-5 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all bg-coconutShell text-softDaisy shadow">Todos</button>
                 <button onclick="filterCategory('carteras')" class="cat-btn px-5 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all bg-white text-coconutShell border border-coconutShell/20 hover:shadow">Carteras / Tote Bags</button>
+                <button onclick="filterCategory('collares')" class="cat-btn px-5 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all bg-white text-coconutShell border border-coconutShell/20 hover:shadow">Collares</button>
                 <button onclick="filterCategory('lentes')" class="cat-btn px-5 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all bg-white text-coconutShell border border-coconutShell/20 hover:shadow">Lentes</button>
                 <button onclick="filterCategory('monederos')" class="cat-btn px-5 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all bg-white text-coconutShell border border-coconutShell/20 hover:shadow">Monederos</button>
             </div>
@@ -361,6 +362,88 @@
                     <div class="flex items-center justify-between pt-4 border-t border-stone-100">
                         <span class="text-lg font-bold text-coconutShell">$25.00</span>
                         <button onclick="addToCart('Cartera Negra Toda', 25.00)" class="bg-coconutShell text-softDaisy px-4 py-2 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COLLARES NUEVOS -->
+
+            <!-- Collar Rosa ($10) -->
+            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="collares">
+                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
+                    <img src="collar-rosa.jpg" alt="Collar Rosa" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
+                    <span class="absolute top-4 left-4 bg-pinkSand text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow z-10">Collares</span>
+                </div>
+                <div class="p-6 flex flex-col flex-grow justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-coconutShell mb-1">Collar de Perlas Rosadas</h3>
+                        <p class="text-coconutShell/70 text-sm mb-4">Elegante collar de cuentas grandes con diseño marmolado rosa.</p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-stone-100">
+                        <span class="text-lg font-bold text-coconutShell">$10.00</span>
+                        <button onclick="addToCart('Collar de Perlas Rosadas', 10.00)" class="bg-pinkSand text-coconutShell px-4 py-2 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Collar Rojón ($9) -->
+            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="collares">
+                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
+                    <img src="collar-rojon.jpg" alt="Collar Rojón" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
+                    <span class="absolute top-4 left-4 bg-dustyCoral text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow z-10">Collares</span>
+                </div>
+                <div class="p-6 flex flex-col flex-grow justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-coconutShell mb-1">Collar de Cuentas Rojas Intensas</h3>
+                        <p class="text-coconutShell/70 text-sm mb-4">Pieza llamativa y vibrante para destacar en tus eventos.</p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-stone-100">
+                        <span class="text-lg font-bold text-coconutShell">$9.00</span>
+                        <button onclick="addToCart('Collar de Cuentas Rojas Intensas', 9.00)" class="bg-dustyCoral text-coconutShell px-4 py-2 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Collar Rojo De ($9) -->
+            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="collares">
+                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
+                    <img src="collar-rojode.jpg" alt="Collar Rojo De" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
+                    <span class="absolute top-4 left-4 bg-dustyCoral text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow z-10">Collares</span>
+                </div>
+                <div class="p-6 flex flex-col flex-grow justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-coconutShell mb-1">Collar Rojo Clásico</h3>
+                        <p class="text-coconutShell/70 text-sm mb-4">Diseño sofisticado de cuentas brillantes en tono rojo profundo.</p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-stone-100">
+                        <span class="text-lg font-bold text-coconutShell">$9.00</span>
+                        <button onclick="addToCart('Collar Rojo Clásico', 9.00)" class="bg-dustyCoral text-coconutShell px-4 py-2 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Collar Verde / Pepas Multicolor ($9) -->
+            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="collares">
+                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
+                    <img src="collar-pepas-verde.jpg" alt="Collar Verde Multicolor" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
+                    <span class="absolute top-4 left-4 bg-softDaisy text-coconutShell text-xs font-bold px-3 py-1 rounded-full border border-coconutShell/20 shadow z-10">Collares</span>
+                </div>
+                <div class="p-6 flex flex-col flex-grow justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-coconutShell mb-1">Collar Multicolor Tonos Tierra y Verde</h3>
+                        <p class="text-coconutShell/70 text-sm mb-4">Combinación versátil de cuentas en tonos verdes, marrones y pasteles.</p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-stone-100">
+                        <span class="text-lg font-bold text-coconutShell">$9.00</span>
+                        <button onclick="addToCart('Collar Multicolor Tonos Tierra y Verde', 9.00)" class="bg-softDaisy text-coconutShell px-4 py-2 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors border border-coconutShell/20">
                             Agregar al carrito
                         </button>
                     </div>
