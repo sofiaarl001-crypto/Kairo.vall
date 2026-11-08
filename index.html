@@ -141,6 +141,7 @@
                 <button onclick="filterCategory('carteras')" class="cat-btn px-5 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all bg-white text-coconutShell border border-coconutShell/20 hover:shadow">Carteras / Tote Bags</button>
                 <button onclick="filterCategory('collares')" class="cat-btn px-5 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all bg-white text-coconutShell border border-coconutShell/20 hover:shadow">Collares</button>
                 <button onclick="filterCategory('pulseras')" class="cat-btn px-5 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all bg-white text-coconutShell border border-coconutShell/20 hover:shadow">Pulseras</button>
+                <button onclick="filterCategory('anillos')" class="cat-btn px-5 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all bg-white text-coconutShell border border-coconutShell/20 hover:shadow">Anillos</button>
                 <button onclick="filterCategory('zarcillos')" class="cat-btn px-5 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all bg-white text-coconutShell border border-coconutShell/20 hover:shadow">Zarcillos</button>
                 <button onclick="filterCategory('lentes')" class="cat-btn px-5 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all bg-white text-coconutShell border border-coconutShell/20 hover:shadow">Lentes</button>
                 <button onclick="filterCategory('monederos')" class="cat-btn px-5 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all bg-white text-coconutShell border border-coconutShell/20 hover:shadow">Monederos</button>
@@ -150,6 +151,29 @@
         <!-- Grid de Productos -->
         <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             
+            <!-- ANILLOS (Galería deslizante) -->
+            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="anillos">
+                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
+                    <img id="anillo-img" src="anillo-1.jpg" alt="Anillos Variedad" class="w-full h-full object-contain scale-115 transition-all duration-300">
+                    <span class="absolute top-4 left-4 bg-coconutShell text-softDaisy text-xs font-bold px-3 py-1 rounded-full shadow z-10">Anillos</span>
+                    <!-- Botones para pasar imágenes -->
+                    <button onclick="prevAnillo()" class="absolute left-2 bg-coconutShell/60 hover:bg-coconutShell text-white p-2 rounded-full text-xs transition-colors shadow">❮</button>
+                    <button onclick="nextAnillo()" class="absolute right-2 bg-coconutShell/60 hover:bg-coconutShell text-white p-2 rounded-full text-xs transition-colors shadow">❯</button>
+                </div>
+                <div class="p-6 flex flex-col flex-grow justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-coconutShell mb-1">Anillo (Variedad de Modelos)</h3>
+                        <p class="text-coconutShell/70 text-sm mb-4">Diseños modernos y sofisticados. ¡Desliza para ver todos los estilos disponibles!</p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-stone-100">
+                        <span class="text-lg font-bold text-coconutShell">$4.00</span>
+                        <button onclick="addToCart('Anillo', 4.00)" class="bg-coconutShell text-softDaisy px-4 py-2 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+
             <!-- ZARCILLOS / EARCuffs (Galería deslizante) -->
             <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="zarcillos">
                 <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
@@ -841,6 +865,26 @@
 
             <!-- MONEDEROS -->
 
+            <!-- Monedero Blanco con Puntos ($10) -->
+            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="monederos">
+                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
+                    <img src="billetera blanca puntos.jpg" alt="Monedero Blanco con Puntos" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
+                    <span class="absolute top-4 left-4 bg-softDaisy text-coconutShell text-xs font-bold px-3 py-1 rounded-full border border-coconutShell/20 shadow z-10">Monederos</span>
+                </div>
+                <div class="p-6 flex flex-col flex-grow justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-coconutShell mb-1">Monedero Blanco con Puntos Negros</h3>
+                        <p class="text-coconutShell/70 text-sm mb-4">Elegante diseño estilo sobre con lunares negros y cierre seguro.</p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-stone-100">
+                        <span class="text-lg font-bold text-coconutShell">$10.00</span>
+                        <button onclick="addToCart('Monedero Blanco con Puntos Negros', 10.00)" class="bg-softDaisy text-coconutShell px-4 py-2 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors border border-coconutShell/20">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+
             <!-- Monedero Negro con Puntos ($8) -->
             <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="monederos">
                 <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
@@ -1001,6 +1045,25 @@
     <!-- Scripts de Interactividad -->
     <script>
         let cart = [];
+
+        // Galería deslizante para Anillos
+        const anilloImages = [
+            "anillo-1.jpg",
+            "anillo-2.jpg",
+            "anillo-3.jpg",
+            "anillo-4.jpg"
+        ];
+        let currentAnilloIndex = 0;
+
+        function nextAnillo() {
+            currentAnilloIndex = (currentAnilloIndex + 1) % anilloImages.length;
+            document.getElementById('anillo-img').src = anilloImages[currentAnilloIndex];
+        }
+
+        function prevAnillo() {
+            currentAnilloIndex = (currentAnilloIndex - 1 + anilloImages.length) % anilloImages.length;
+            document.getElementById('anillo-img').src = anilloImages[currentAnilloIndex];
+        }
 
         // Galería deslizante para Earcuffs
         const earcuffImages = [
