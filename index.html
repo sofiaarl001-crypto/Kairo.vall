@@ -140,6 +140,7 @@
                 <button onclick="filterCategory('all')" class="cat-btn active px-5 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all bg-coconutShell text-softDaisy shadow">Todos</button>
                 <button onclick="filterCategory('carteras')" class="cat-btn px-5 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all bg-white text-coconutShell border border-coconutShell/20 hover:shadow">Carteras / Tote Bags</button>
                 <button onclick="filterCategory('collares')" class="cat-btn px-5 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all bg-white text-coconutShell border border-coconutShell/20 hover:shadow">Collares</button>
+                <button onclick="filterCategory('pulseras')" class="cat-btn px-5 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all bg-white text-coconutShell border border-coconutShell/20 hover:shadow">Pulseras</button>
                 <button onclick="filterCategory('lentes')" class="cat-btn px-5 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all bg-white text-coconutShell border border-coconutShell/20 hover:shadow">Lentes</button>
                 <button onclick="filterCategory('monederos')" class="cat-btn px-5 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all bg-white text-coconutShell border border-coconutShell/20 hover:shadow">Monederos</button>
             </div>
@@ -368,7 +369,7 @@
                 </div>
             </div>
 
-            <!-- COLLARES NUEVOS Y ANTERIORES -->
+            <!-- COLLARES -->
 
             <!-- Collar de Dijes Azul ($8) -->
             <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="collares">
@@ -570,6 +571,190 @@
                 </div>
             </div>
 
+            <!-- PULSERAS NUEVAS -->
+
+            <!-- Manilla Dorada ($5) -->
+            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="pulseras">
+                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
+                    <img src="manilla-dorada.jpg" alt="Manilla Dorada" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
+                    <span class="absolute top-4 left-4 bg-softDaisy text-coconutShell text-xs font-bold px-3 py-1 rounded-full border border-coconutShell/20 shadow z-10">Pulseras</span>
+                </div>
+                <div class="p-6 flex flex-col flex-grow justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-coconutShell mb-1">Manilla Ondulada Dorada</h3>
+                        <p class="text-coconutShell/70 text-sm mb-4">Brazalete rígido con acabado metálico dorado brillante.</p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-stone-100">
+                        <span class="text-lg font-bold text-coconutShell">$5.00</span>
+                        <button onclick="addToCart('Manilla Ondulada Dorada', 5.00)" class="bg-softDaisy text-coconutShell px-4 py-2 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors border border-coconutShell/20">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Manilla Rosada ($5) -->
+            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="pulseras">
+                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
+                    <img src="manilla-rosada.jpg" alt="Manilla Rosada" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
+                    <span class="absolute top-4 left-4 bg-pinkSand text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow z-10">Pulseras</span>
+                </div>
+                <div class="p-6 flex flex-col flex-grow justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-coconutShell mb-1">Manilla Ondulada Rosada</h3>
+                        <p class="text-coconutShell/70 text-sm mb-4">Brazalete en tono rosa suave con efecto marmolado translúcido.</p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-stone-100">
+                        <span class="text-lg font-bold text-coconutShell">$5.00</span>
+                        <button onclick="addToCart('Manilla Ondulada Rosada', 5.00)" class="bg-pinkSand text-coconutShell px-4 py-2 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Manilla Fucsia ($5) -->
+            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="pulseras">
+                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
+                    <img src="manilla-fucsia.jpg" alt="Manilla Fucsia" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
+                    <span class="absolute top-4 left-4 bg-dustyCoral text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow z-10">Pulseras</span>
+                </div>
+                <div class="p-6 flex flex-col flex-grow justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-coconutShell mb-1">Manilla Ondulada Fucsia</h3>
+                        <p class="text-coconutShell/70 text-sm mb-4">Brazalete vibrante en tono fucsia con hermosos reflejos.</p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-stone-100">
+                        <span class="text-lg font-bold text-coconutShell">$5.00</span>
+                        <button onclick="addToCart('Manilla Ondulada Fucsia', 5.00)" class="bg-dustyCoral text-coconutShell px-4 py-2 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pulsera Beige ($5) -->
+            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="pulseras">
+                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
+                    <img src="pulsera-beige.jpg" alt="Pulsera Beige" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
+                    <span class="absolute top-4 left-4 bg-softDaisy text-coconutShell text-xs font-bold px-3 py-1 rounded-full border border-coconutShell/20 shadow z-10">Pulseras</span>
+                </div>
+                <div class="p-6 flex flex-col flex-grow justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-coconutShell mb-1">Pulsera Ancha Beige</h3>
+                        <p class="text-coconutShell/70 text-sm mb-4">Brazalete clásico y elegante en tono beige neutro brillante.</p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-stone-100">
+                        <span class="text-lg font-bold text-coconutShell">$5.00</span>
+                        <button onclick="addToCart('Pulsera Ancha Beige', 5.00)" class="bg-softDaisy text-coconutShell px-4 py-2 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors border border-coconutShell/20">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pulsera Marrón Oscuro ($5) -->
+            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="pulseras">
+                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
+                    <img src="pulsera-marron-oscuro.jpg" alt="Pulsera Marrón Oscuro" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
+                    <span class="absolute top-4 left-4 bg-coconutShell text-softDaisy text-xs font-bold px-3 py-1 rounded-full shadow z-10">Pulseras</span>
+                </div>
+                <div class="p-6 flex flex-col flex-grow justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-coconutShell mb-1">Pulsera Ancha Marrón Oscuro</h3>
+                        <p class="text-coconutShell/70 text-sm mb-4">Brazalete sólido con acabado brillante en tono marrón profundo.</p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-stone-100">
+                        <span class="text-lg font-bold text-coconutShell">$5.00</span>
+                        <button onclick="addToCart('Pulsera Ancha Marrón Oscuro', 5.00)" class="bg-coconutShell text-softDaisy px-4 py-2 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pulsera Naranja ($5) -->
+            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="pulseras">
+                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
+                    <img src="pulsera-naranja.jpg" alt="Pulsera Naranja" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
+                    <span class="absolute top-4 left-4 bg-dustyCoral text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow z-10">Pulseras</span>
+                </div>
+                <div class="p-6 flex flex-col flex-grow justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-coconutShell mb-1">Pulsera Ancha Naranja</h3>
+                        <p class="text-coconutShell/70 text-sm mb-4">Brazalete en tono terracota / naranja brillante muy llamativo.</p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-stone-100">
+                        <span class="text-lg font-bold text-coconutShell">$5.00</span>
+                        <button onclick="addToCart('Pulsera Ancha Naranja', 5.00)" class="bg-dustyCoral text-coconutShell px-4 py-2 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pulsera Carey ($5) -->
+            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="pulseras">
+                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
+                    <img src="pulsera-carey.jpg" alt="Pulsera Carey" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
+                    <span class="absolute top-4 left-4 bg-pinkSand text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow z-10">Pulseras</span>
+                </div>
+                <div class="p-6 flex flex-col flex-grow justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-coconutShell mb-1">Pulsera Ancha Carey</h3>
+                        <p class="text-coconutShell/70 text-sm mb-4">Estilo carey translúcido clásico con tonos ámbar y crema.</p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-stone-100">
+                        <span class="text-lg font-bold text-coconutShell">$5.00</span>
+                        <button onclick="addToCart('Pulsera Ancha Carey', 5.00)" class="bg-pinkSand text-coconutShell px-4 py-2 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pulsera Marrón Claro ($5) -->
+            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="pulseras">
+                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
+                    <img src="pulsera-marron-claro.jpg" alt="Pulsera Marrón Claro" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
+                    <span class="absolute top-4 left-4 bg-coconutShell text-softDaisy text-xs font-bold px-3 py-1 rounded-full shadow z-10">Pulseras</span>
+                </div>
+                <div class="p-6 flex flex-col flex-grow justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-coconutShell mb-1">Pulsera Ancha Marrón Claro</h3>
+                        <p class="text-coconutShell/70 text-sm mb-4">Brazalete con textura y vetas estilo carey cálido.</p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-stone-100">
+                        <span class="text-lg font-bold text-coconutShell">$5.00</span>
+                        <button onclick="addToCart('Pulsera Ancha Marrón Claro', 5.00)" class="bg-coconutShell text-softDaisy px-4 py-2 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pulsera Blanca ($5) -->
+            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="pulseras">
+                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
+                    <img src="pulsera-blanca.jpg" alt="Pulsera Blanca" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
+                    <span class="absolute top-4 left-4 bg-softDaisy text-coconutShell text-xs font-bold px-3 py-1 rounded-full border border-coconutShell/20 shadow z-10">Pulseras</span>
+                </div>
+                <div class="p-6 flex flex-col flex-grow justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-coconutShell mb-1">Pulsera Ancha Blanca Marmolada</h3>
+                        <p class="text-coconutShell/70 text-sm mb-4">Diseño elegante en base blanca con finas vetas doradas.</p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-stone-100">
+                        <span class="text-lg font-bold text-coconutShell">$5.00</span>
+                        <button onclick="addToCart('Pulsera Ancha Blanca Marmolada', 5.00)" class="bg-softDaisy text-coconutShell px-4 py-2 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors border border-coconutShell/20">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LENTES -->
+
             <!-- Lentes Amarillos ($8) -->
             <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="lentes">
                 <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
@@ -624,6 +809,28 @@
                     <div class="flex items-center justify-between pt-4 border-t border-stone-100">
                         <span class="text-lg font-bold text-coconutShell">$8.00</span>
                         <button onclick="addToCart('Lentes Animal Print', 8.00)" class="bg-softDaisy text-coconutShell px-4 py-2 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors border border-coconutShell/20">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MONEDEROS -->
+
+            <!-- Monedero Negro con Puntos ($8) -->
+            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="monederos">
+                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
+                    <img src="monedero-negro.jpg" alt="Monedero Negro con Puntos" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
+                    <span class="absolute top-4 left-4 bg-coconutShell text-softDaisy text-xs font-bold px-3 py-1 rounded-full shadow z-10">Monederos</span>
+                </div>
+                <div class="p-6 flex flex-col flex-grow justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-coconutShell mb-1">Monedero Negro con Puntos Blancos</h3>
+                        <p class="text-coconutShell/70 text-sm mb-4">Elegante tarjetero y monedero brillante con lunares.</p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-stone-100">
+                        <span class="text-lg font-bold text-coconutShell">$8.00</span>
+                        <button onclick="addToCart('Monedero Negro con Puntos Blancos', 8.00)" class="bg-coconutShell text-softDaisy px-4 py-2 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors">
                             Agregar al carrito
                         </button>
                     </div>
