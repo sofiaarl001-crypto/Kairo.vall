@@ -141,6 +141,7 @@
                 <button onclick="filterCategory('carteras')" class="cat-btn px-5 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all bg-white text-coconutShell border border-coconutShell/20 hover:shadow">Carteras / Tote Bags</button>
                 <button onclick="filterCategory('collares')" class="cat-btn px-5 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all bg-white text-coconutShell border border-coconutShell/20 hover:shadow">Collares</button>
                 <button onclick="filterCategory('pulseras')" class="cat-btn px-5 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all bg-white text-coconutShell border border-coconutShell/20 hover:shadow">Pulseras</button>
+                <button onclick="filterCategory('zarcillos')" class="cat-btn px-5 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all bg-white text-coconutShell border border-coconutShell/20 hover:shadow">Zarcillos</button>
                 <button onclick="filterCategory('lentes')" class="cat-btn px-5 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all bg-white text-coconutShell border border-coconutShell/20 hover:shadow">Lentes</button>
                 <button onclick="filterCategory('monederos')" class="cat-btn px-5 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all bg-white text-coconutShell border border-coconutShell/20 hover:shadow">Monederos</button>
             </div>
@@ -149,6 +150,29 @@
         <!-- Grid de Productos -->
         <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             
+            <!-- ZARCILLOS / EARCuffs (Galería deslizante) -->
+            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="zarcillos">
+                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
+                    <img id="earcuff-img" src="earcuff-1.jpg" alt="Earcuffs Variedad" class="w-full h-full object-contain scale-115 transition-all duration-300">
+                    <span class="absolute top-4 left-4 bg-coconutShell text-softDaisy text-xs font-bold px-3 py-1 rounded-full shadow z-10">Zarcillos</span>
+                    <!-- Botones para pasar imágenes -->
+                    <button onclick="prevEarcuff()" class="absolute left-2 bg-coconutShell/60 hover:bg-coconutShell text-white p-2 rounded-full text-xs transition-colors shadow">❮</button>
+                    <button onclick="nextEarcuff()" class="absolute right-2 bg-coconutShell/60 hover:bg-coconutShell text-white p-2 rounded-full text-xs transition-colors shadow">❯</button>
+                </div>
+                <div class="p-6 flex flex-col flex-grow justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-coconutShell mb-1">Earcuff (Variedad de Modelos)</h3>
+                        <p class="text-coconutShell/70 text-sm mb-4">Modernos earcuffs metalizados y texturizados sin perforación. ¡Desliza para ver todos los diseños!</p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-stone-100">
+                        <span class="text-lg font-bold text-coconutShell">$3.00</span>
+                        <button onclick="addToCart('Earcuff', 3.00)" class="bg-coconutShell text-softDaisy px-4 py-2 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+
             <!-- Cartera Blanca Toda ($20) -->
             <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="carteras">
                 <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
@@ -571,7 +595,7 @@
                 </div>
             </div>
 
-            <!-- PULSERAS NUEVAS -->
+            <!-- PULSERAS -->
 
             <!-- Manilla Dorada ($5) -->
             <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="pulseras">
@@ -977,6 +1001,31 @@
     <!-- Scripts de Interactividad -->
     <script>
         let cart = [];
+
+        // Galería deslizante para Earcuffs
+        const earcuffImages = [
+            "earcuff-1.jpg",
+            "earcuff-2.jpg",
+            "earcuff-3.jpg",
+            "earcuff-4.jpg",
+            "earcuff-5.jpg",
+            "earcuff-6.jpg",
+            "earcuff-7.jpg",
+            "earcuff-8.jpg",
+            "earcuff-9.jpg",
+            "earcuff-10.jpg"
+        ];
+        let currentEarcuffIndex = 0;
+
+        function nextEarcuff() {
+            currentEarcuffIndex = (currentEarcuffIndex + 1) % earcuffImages.length;
+            document.getElementById('earcuff-img').src = earcuffImages[currentEarcuffIndex];
+        }
+
+        function prevEarcuff() {
+            currentEarcuffIndex = (currentEarcuffIndex - 1 + earcuffImages.length) % earcuffImages.length;
+            document.getElementById('earcuff-img').src = earcuffImages[currentEarcuffIndex];
+        }
 
         function toggleCart() {
             const modal = document.getElementById('cart-modal');
