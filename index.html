@@ -25,161 +25,228 @@
     <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #E7CCC5; /* Pink Sand de fondo general para dar calidez */
         }
         h1, h2, h3, .font-serif {
             font-family: 'Playfair Display', serif;
         }
+        /* Ocultar barra de desplazamiento en carrusel móvil manteniendo funcionalidad */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
     </style>
 </head>
-<body class="bg-softDaisy/20 text-coconutShell antialiased selection:bg-dustyCoral selection:text-white">
+<body class="text-coconutShell antialiased selection:bg-dustyCoral selection:text-white">
 
-    <!-- Navbar -->
-    <header class="sticky top-0 z-50 bg-coconutShell/95 backdrop-blur-md text-softDaisy shadow-md transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+    <!-- Navbar Estilo Boutique -->
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-dustyCoral/20 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <!-- Logo y Nombre -->
             <a href="#" class="flex items-center gap-3 group">
-                <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-dustyCoral shadow-sm group-hover:scale-105 transition-transform bg-coconutShell flex items-center justify-center">
+                <div class="w-11 h-11 rounded-full overflow-hidden border-2 border-dustyCoral shadow-sm group-hover:scale-105 transition-transform bg-coconutShell flex items-center justify-center">
                     <img src="logo-kairo.png" alt="KaiRo Logo" class="w-full h-full object-cover scale-125">
                 </div>
-                <span class="text-2xl font-serif font-bold tracking-wider text-softDaisy">kairo</span>
+                <span class="text-2xl font-serif font-bold tracking-widest uppercase text-coconutShell">kairo</span>
             </a>
 
             <!-- Menú de Navegación -->
-            <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-coconutShell/80">
                 <a href="#inicio" class="hover:text-dustyCoral transition-colors">Inicio</a>
-                <a href="#mision" class="hover:text-dustyCoral transition-colors">Nosotros</a>
+                <a href="#destacados" class="hover:text-dustyCoral transition-colors">Favoritos</a>
                 <a href="#catalogo" class="hover:text-dustyCoral transition-colors">Catálogo</a>
                 <a href="#contacto" class="hover:text-dustyCoral transition-colors">Contacto</a>
             </nav>
 
             <!-- Acciones / Carrito -->
             <div class="flex items-center gap-4">
-                <button onclick="toggleCart()" class="relative bg-dustyCoral text-coconutShell px-4 py-2 rounded-full font-semibold flex items-center gap-2 hover:bg-pinkSand transition-all shadow-sm">
+                <button onclick="toggleCart()" class="relative bg-dustyCoral text-coconutShell px-5 py-2.5 rounded-full font-semibold flex items-center gap-2 hover:bg-pinkSand transition-all shadow-sm">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                     </svg>
                     <span>Carrito</span>
-                    <span id="cart-count" class="absolute -top-2 -right-2 bg-softDaisy text-coconutShell text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center border-2 border-coconutShell shadow">0</span>
+                    <span id="cart-count" class="absolute -top-2 -right-2 bg-coconutShell text-softDaisy text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center border-2 border-white shadow">0</span>
                 </button>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="inicio" class="relative min-h-[85vh] flex items-center justify-center bg-gradient-to-b from-softDaisy/40 to-pinkSand/20 px-4 py-16 overflow-hidden">
-        <div class="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-softDaisy/60 blur-3xl pointer-events-none"></div>
-        <div class="absolute -bottom-24 -right-24 w-96 h-96 rounded-full bg-dustyCoral/20 blur-3xl pointer-events-none"></div>
-
-        <div class="max-w-4xl mx-auto text-center relative z-10 space-y-8">
-            <span class="inline-block bg-dustyCoral/20 text-coconutShell text-xs uppercase tracking-widest px-4 py-2 rounded-full font-bold border border-dustyCoral/30">
-                Valencia, Carabobo - Venezuela
-            </span>
-            <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-coconutShell leading-tight">
-                Donde encontrarás tu <span class="italic text-dustyCoral font-serif">detalle deseado</span>
-            </h1>
-            <p class="text-lg md:text-xl text-coconutShell/80 max-w-2xl mx-auto font-light leading-relaxed">
-                Transformamos momentos ordinarios en recuerdos inolvidables a través de nuestros exclusivos accesorios y detalles seleccionados especialmente para ti.
-            </p>
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-                <a href="#catalogo" class="w-full sm:w-auto bg-coconutShell text-softDaisy px-8 py-4 rounded-full font-bold text-base hover:bg-dustyCoral hover:text-coconutShell transition-all shadow-lg transform hover:-translate-y-0.5">
-                    Ver Catálogo
-                </a>
-                <a href="#contacto" class="w-full sm:w-auto border-2 border-coconutShell text-coconutShell px-8 py-3.5 rounded-full font-bold text-base hover:bg-coconutShell hover:text-softDaisy transition-all">
-                    Contáctanos
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Misión y Valores -->
-    <section id="mision" class="py-20 bg-white/60 backdrop-blur-sm px-4 sm:px-6 lg:px-8">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-coconutShell mb-4">Nuestra Esencia</h2>
-                <div class="w-20 h-1 bg-dustyCoral mx-auto rounded-full mb-4"></div>
-                <p class="text-coconutShell/80">Comprometidos en ofrecerte elegancia, calidad y cercanía desde Valencia para toda Venezuela.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Misión -->
-                <div class="bg-softDaisy/30 p-8 rounded-3xl border border-softDaisy shadow-sm hover:shadow-md transition-all">
-                    <div class="w-12 h-12 bg-dustyCoral text-coconutShell rounded-2xl flex items-center justify-center font-bold text-xl mb-6 shadow-inner">
-                        M
-                    </div>
-                    <h3 class="text-2xl font-bold text-coconutShell mb-3">Misión</h3>
-                    <p class="text-coconutShell/80 leading-relaxed">
-                        Llevar alegría y detalles únicos a cada rincón de Valencia y toda Venezuela, seleccionando productos que transmitan amor, estilo y elegancia en cada ocasión especial.
+    <!-- Hero Section Asimétrico Editorial -->
+    <section id="inicio" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            
+            <!-- Bloque de Texto Principal -->
+            <div class="lg:col-span-7 bg-pinkSand/40 rounded-[2.5rem] p-8 sm:p-12 flex flex-col justify-between relative overflow-hidden border border-white/40 shadow-sm">
+                <!-- Forma abstracta decorativa de fondo -->
+                <div class="absolute -top-16 -right-16 w-64 h-64 rounded-full bg-softDaisy/50 blur-3xl pointer-events-none"></div>
+                
+                <div class="space-y-4 relative z-10">
+                    <span class="inline-block bg-white/70 text-coconutShell text-xs uppercase tracking-widest px-4 py-2 rounded-full font-bold shadow-xs">
+                        ✨ Valencia, Carabobo - Venezuela
+                    </span>
+                    <h1 class="text-4xl sm:text-6xl font-bold tracking-tight text-coconutShell leading-[1.1]">
+                        Eleva tu estilo con cada <span class="italic font-serif text-dustyCoral">detalle deseado</span>
+                    </h1>
+                    <p class="text-base sm:text-lg text-coconutShell/80 font-light max-w-lg leading-relaxed">
+                        Transformamos momentos ordinarios en recuerdos inolvidables a través de nuestros exclusivos accesorios seleccionados especialmente para ti.
                     </p>
                 </div>
 
-                <!-- Valores -->
-                <div class="bg-pinkSand/20 p-8 rounded-3xl border border-pinkSand/50 shadow-sm hover:shadow-md transition-all">
-                    <div class="w-12 h-12 bg-coconutShell text-softDaisy rounded-2xl flex items-center justify-center font-bold text-xl mb-6 shadow-inner">
-                        V
-                    </div>
-                    <h3 class="text-2xl font-bold text-coconutShell mb-3">Valores</h3>
-                    <ul class="space-y-2 text-coconutShell/80">
-                        <li class="flex items-center gap-2">✨ <strong class="text-coconutShell">Calidad:</strong> Productos cuidadosamente seleccionados.</li>
-                        <li class="flex items-center gap-2">💖 <strong class="text-coconutShell">Detalle:</strong> Pasión en cada presentación.</li>
-                        <li class="flex items-center gap-2">🤝 <strong class="text-coconutShell">Cercanía:</strong> Atención cálida para toda Venezuela.</li>
-                    </ul>
+                <div class="pt-8 relative z-10 flex flex-wrap items-center gap-4">
+                    <a href="#catalogo" class="bg-coconutShell text-softDaisy px-8 py-4 rounded-full font-bold text-sm tracking-wide hover:bg-dustyCoral hover:text-coconutShell transition-all shadow-md">
+                        Explorar Colección →
+                    </a>
                 </div>
             </div>
+
+            <!-- Bloque de Imagen Destacada Estilo Editorial -->
+            <div class="lg:col-span-5 bg-white rounded-[2.5rem] p-4 flex items-center justify-center relative overflow-hidden shadow-sm border border-white/40 min-h-[350px]">
+                <div class="w-full h-full rounded-[2rem] overflow-hidden bg-stone-100 flex items-center justify-center relative group">
+                    <img src="cartera-azul-jean.jpg" alt="KaiRo Featured" class="w-full h-full object-cover scale-105 group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-coconutShell/40 via-transparent to-transparent flex items-end p-6">
+                        <span class="text-white text-sm font-semibold tracking-wider uppercase bg-black/30 backdrop-blur-md px-4 py-1.5 rounded-full">Tendencia KaiRo</span>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <!-- Catálogo -->
-    <section id="catalogo" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div class="text-center max-w-2xl mx-auto mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-coconutShell mb-4">Nuestro Catálogo</h2>
-            <div class="w-20 h-1 bg-dustyCoral mx-auto rounded-full mb-4"></div>
-            <p class="text-coconutShell/80">Explora nuestras secciones diseñadas con estilo exclusivo.</p>
-
-            <!-- Filtros por Categoría -->
-            <div class="flex flex-wrap justify-center gap-2 mt-8">
-                <button onclick="filterCategory('all')" class="cat-btn active px-5 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all bg-coconutShell text-softDaisy shadow">Todos</button>
-                <button onclick="filterCategory('carteras')" class="cat-btn px-5 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all bg-white text-coconutShell border border-coconutShell/20 hover:shadow">Carteras / Tote Bags</button>
-                <button onclick="filterCategory('collares')" class="cat-btn px-5 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all bg-white text-coconutShell border border-coconutShell/20 hover:shadow">Collares</button>
-                <button onclick="filterCategory('pulseras')" class="cat-btn px-5 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all bg-white text-coconutShell border border-coconutShell/20 hover:shadow">Pulseras</button>
-                <button onclick="filterCategory('anillos')" class="cat-btn px-5 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all bg-white text-coconutShell border border-coconutShell/20 hover:shadow">Anillos</button>
-                <button onclick="filterCategory('zarcillos')" class="cat-btn px-5 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all bg-white text-coconutShell border border-coconutShell/20 hover:shadow">Zarcillos</button>
-                <button onclick="filterCategory('lentes')" class="cat-btn px-5 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all bg-white text-coconutShell border border-coconutShell/20 hover:shadow">Lentes</button>
-                <button onclick="filterCategory('monederos')" class="cat-btn px-5 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all bg-white text-coconutShell border border-coconutShell/20 hover:shadow">Monederos</button>
+    <!-- Barra de Productos Movibles / Destacados ("New Favorites") -->
+    <section id="destacados" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="flex items-center justify-between mb-8">
+            <div>
+                <span class="text-dustyCoral text-xs uppercase tracking-widest font-bold block mb-1">✨ Selección Exclusiva</span>
+                <h2 class="text-3xl font-bold font-serif text-coconutShell">Nuevos Favoritos</h2>
+            </div>
+            <div class="flex gap-2">
+                <button onclick="scrollFavorites(-1)" class="w-10 h-10 rounded-full bg-white border border-stone-200 flex items-center justify-center hover:bg-softDaisy/50 transition-colors shadow-xs">❮</button>
+                <button onclick="scrollFavorites(1)" class="w-10 h-10 rounded-full bg-white border border-stone-200 flex items-center justify-center hover:bg-softDaisy/50 transition-colors shadow-xs">❯</button>
             </div>
         </div>
 
-        <!-- Grid de Productos -->
+        <!-- Carrusel Movible -->
+        <div id="favorites-container" class="flex gap-6 overflow-x-auto no-scrollbar scroll-smooth pb-4">
+            
+            <!-- Item 1 -->
+            <div class="min-w-[260px] sm:min-w-[280px] bg-white rounded-[2rem] p-4 shadow-xs border border-stone-100 flex flex-col justify-between group">
+                <div class="relative h-64 rounded-[1.5rem] bg-stone-50 overflow-hidden flex items-center justify-center p-2">
+                    <img src="cartera-amarilla.jpg" alt="Cartera Amarilla Mantequilla" class="w-full h-full object-contain scale-105 group-hover:scale-110 transition-transform duration-500">
+                    <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-xs text-xs font-bold px-3 py-1 rounded-full shadow-xs">Carteras</span>
+                </div>
+                <div class="pt-4 flex items-center justify-between">
+                    <div>
+                        <h4 class="font-bold text-sm text-coconutShell">Cartera Amarilla Mantequilla</h4>
+                        <p class="text-sm font-semibold text-dustyCoral mt-0.5">28,00 €</p>
+                    </div>
+                    <button onclick="addToCart('Cartera Amarilla Mantequilla', 28.00)" class="w-9 h-9 rounded-full bg-coconutShell text-softDaisy flex items-center justify-center hover:bg-dustyCoral hover:text-coconutShell transition-colors shadow-sm">+</button>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="min-w-[260px] sm:min-w-[280px] bg-white rounded-[2rem] p-4 shadow-xs border border-stone-100 flex flex-col justify-between group">
+                <div class="relative h-64 rounded-[1.5rem] bg-stone-50 overflow-hidden flex items-center justify-center p-2">
+                    <img src="collar-dijes-azul.jpg" alt="Collar de Dijes Azul" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
+                    <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-xs text-xs font-bold px-3 py-1 rounded-full shadow-xs">Collares</span>
+                </div>
+                <div class="pt-4 flex items-center justify-between">
+                    <div>
+                        <h4 class="font-bold text-sm text-coconutShell">Collar de Dijes Azul</h4>
+                        <p class="text-sm font-semibold text-dustyCoral mt-0.5">8,00 €</p>
+                    </div>
+                    <button onclick="addToCart('Collar de Dijes Azul', 8.00)" class="w-9 h-9 rounded-full bg-coconutShell text-softDaisy flex items-center justify-center hover:bg-dustyCoral hover:text-coconutShell transition-colors shadow-sm">+</button>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="min-w-[260px] sm:min-w-[280px] bg-white rounded-[2rem] p-4 shadow-xs border border-stone-100 flex flex-col justify-between group">
+                <div class="relative h-64 rounded-[1.5rem] bg-stone-50 overflow-hidden flex items-center justify-center p-2">
+                    <img src="zarcillo-rojo.jpg" alt="Zarcillos Rojos" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
+                    <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-xs text-xs font-bold px-3 py-1 rounded-full shadow-xs">Zarcillos</span>
+                </div>
+                <div class="pt-4 flex items-center justify-between">
+                    <div>
+                        <h4 class="font-bold text-sm text-coconutShell">Argollas Doradas con Rojo</h4>
+                        <p class="text-sm font-semibold text-dustyCoral mt-0.5">5,00 €</p>
+                    </div>
+                    <button onclick="addToCart('Argollas Doradas con Rojo y Cristales', 5.00)" class="w-9 h-9 rounded-full bg-coconutShell text-softDaisy flex items-center justify-center hover:bg-dustyCoral hover:text-coconutShell transition-colors shadow-sm">+</button>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="min-w-[260px] sm:min-w-[280px] bg-white rounded-[2rem] p-4 shadow-xs border border-stone-100 flex flex-col justify-between group">
+                <div class="relative h-64 rounded-[1.5rem] bg-stone-50 overflow-hidden flex items-center justify-center p-2">
+                    <img src="billetera blanca puntos.jpg" alt="Monedero Blanco" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
+                    <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-xs text-xs font-bold px-3 py-1 rounded-full shadow-xs">Monederos</span>
+                </div>
+                <div class="pt-4 flex items-center justify-between">
+                    <div>
+                        <h4 class="font-bold text-sm text-coconutShell">Monedero Blanco Puntos</h4>
+                        <p class="text-sm font-semibold text-dustyCoral mt-0.5">10,00 €</p>
+                    </div>
+                    <button onclick="addToCart('Monedero Blanco con Puntos Negros', 10.00)" class="w-9 h-9 rounded-full bg-coconutShell text-softDaisy flex items-center justify-center hover:bg-dustyCoral hover:text-coconutShell transition-colors shadow-sm">+</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Catálogo Completo -->
+    <section id="catalogo" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-coconutShell mb-4">Nuestro Catálogo</h2>
+            <div class="w-20 h-1 bg-dustyCoral mx-auto rounded-full mb-4"></div>
+            <p class="text-coconutShell/80">Explora todas nuestras secciones diseñadas con estilo exclusivo.</p>
+
+            <!-- Filtros por Categoría con Estilo Botón Redondeado -->
+            <div class="flex flex-wrap justify-center gap-2 mt-8">
+                <button onclick="filterCategory('all')" class="cat-btn active px-6 py-2.5 rounded-full font-semibold text-xs sm:text-sm transition-all bg-coconutShell text-softDaisy shadow-xs">Todos</button>
+                <button onclick="filterCategory('carteras')" class="cat-btn px-6 py-2.5 rounded-full font-semibold text-xs sm:text-sm transition-all bg-white text-coconutShell border border-coconutShell/10 hover:shadow-xs">Carteras / Tote Bags</button>
+                <button onclick="filterCategory('collares')" class="cat-btn px-6 py-2.5 rounded-full font-semibold text-xs sm:text-sm transition-all bg-white text-coconutShell border border-coconutShell/10 hover:shadow-xs">Collares</button>
+                <button onclick="filterCategory('pulseras')" class="cat-btn px-6 py-2.5 rounded-full font-semibold text-xs sm:text-sm transition-all bg-white text-coconutShell border border-coconutShell/10 hover:shadow-xs">Pulseras</button>
+                <button onclick="filterCategory('anillos')" class="cat-btn px-6 py-2.5 rounded-full font-semibold text-xs sm:text-sm transition-all bg-white text-coconutShell border border-coconutShell/10 hover:shadow-xs">Anillos</button>
+                <button onclick="filterCategory('zarcillos')" class="cat-btn px-6 py-2.5 rounded-full font-semibold text-xs sm:text-sm transition-all bg-white text-coconutShell border border-coconutShell/10 hover:shadow-xs">Zarcillos</button>
+                <button onclick="filterCategory('llaveros')" class="cat-btn px-6 py-2.5 rounded-full font-semibold text-xs sm:text-sm transition-all bg-white text-coconutShell border border-coconutShell/10 hover:shadow-xs">Llaveros</button>
+                <button onclick="filterCategory('lentes')" class="cat-btn px-6 py-2.5 rounded-full font-semibold text-xs sm:text-sm transition-all bg-white text-coconutShell border border-coconutShell/10 hover:shadow-xs">Lentes</button>
+                <button onclick="filterCategory('monederos')" class="cat-btn px-6 py-2.5 rounded-full font-semibold text-xs sm:text-sm transition-all bg-white text-coconutShell border border-coconutShell/10 hover:shadow-xs">Monederos</button>
+            </div>
+        </div>
+
+        <!-- Grid de Productos con Fondo Blanco Limpio -->
         <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             
-            <!-- SET DE ANILLOS (Galería deslizante - 8,00 €) -->
-            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="anillos">
-                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
-                    <img id="anillo-img" src="set-anillos.jpg" alt="Set de Anillos" class="w-full h-full object-contain scale-115 transition-all duration-300">
-                    <span class="absolute top-4 left-4 bg-coconutShell text-softDaisy text-xs font-bold px-3 py-1 rounded-full shadow z-10">Anillos</span>
-                    <button onclick="prevAnillo()" class="absolute left-2 bg-coconutShell/60 hover:bg-coconutShell text-white p-2 rounded-full text-xs transition-colors shadow">❮</button>
-                    <button onclick="nextAnillo()" class="absolute right-2 bg-coconutShell/60 hover:bg-coconutShell text-white p-2 rounded-full text-xs transition-colors shadow">❯</button>
+            <!-- SET DE ANILLOS -->
+            <div class="product-card bg-white rounded-[2.5rem] overflow-hidden shadow-xs border border-white flex flex-col group p-2" data-category="anillos">
+                <div class="relative h-80 overflow-hidden bg-stone-50 rounded-[2rem] flex items-center justify-center p-2">
+                    <img id="anillo-img" src="anillo-1_3.jpg" alt="Set de Anillos" class="w-full h-full object-contain scale-115 transition-all duration-300">
+                    <span class="absolute top-4 left-4 bg-coconutShell text-softDaisy text-xs font-bold px-3.5 py-1 rounded-full shadow-xs z-10">Anillos</span>
+                    <button onclick="prevAnillo()" class="absolute left-3 bg-white/80 hover:bg-white text-coconutShell w-9 h-9 rounded-full flex items-center justify-center text-xs transition-colors shadow-sm">❮</button>
+                    <button onclick="nextAnillo()" class="absolute right-3 bg-white/80 hover:bg-white text-coconutShell w-9 h-9 rounded-full flex items-center justify-center text-xs transition-colors shadow-sm">❯</button>
                 </div>
                 <div class="p-6 flex flex-col flex-grow justify-between">
                     <div>
                         <h3 class="text-xl font-bold text-coconutShell mb-1">Set de Anillos Combinados</h3>
-                        <p class="text-coconutShell/70 text-sm mb-4">Hermoso juego de anillos modernos en acabado plateado.</p>
+                        <p class="text-coconutShell/70 text-sm mb-4">Hermoso juego de anillos modernos en acabado plateado. ¡Desliza para verlos uno por uno!</p>
                     </div>
                     <div class="flex items-center justify-between pt-4 border-t border-stone-100">
                         <span class="text-lg font-bold text-coconutShell">8,00 €</span>
-                        <button onclick="addToCart('Set de Anillos Combinados', 8.00)" class="bg-coconutShell text-softDaisy px-4 py-2 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors">
+                        <button onclick="addToCart('Set de Anillos Combinados', 8.00)" class="bg-coconutShell text-softDaisy px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors shadow-xs">
                             Agregar al carrito
                         </button>
                     </div>
                 </div>
             </div>
 
-            <!-- SETS DE PULSERAS (Galería deslizante - 10,00 €) -->
-            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="pulseras">
-                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
+            <!-- SETS DE PULSERAS -->
+            <div class="product-card bg-white rounded-[2.5rem] overflow-hidden shadow-xs border border-white flex flex-col group p-2" data-category="pulseras">
+                <div class="relative h-80 overflow-hidden bg-stone-50 rounded-[2rem] flex items-center justify-center p-2">
                     <img id="pulsera-img" src="set-1.jpg" alt="Set de Pulseras" class="w-full h-full object-contain scale-115 transition-all duration-300">
-                    <span class="absolute top-4 left-4 bg-softDaisy text-coconutShell text-xs font-bold px-3 py-1 rounded-full border border-coconutShell/20 shadow z-10">Pulseras</span>
-                    <button onclick="prevPulsera()" class="absolute left-2 bg-coconutShell/60 hover:bg-coconutShell text-white p-2 rounded-full text-xs transition-colors shadow">❮</button>
-                    <button onclick="nextPulsera()" class="absolute right-2 bg-coconutShell/60 hover:bg-coconutShell text-white p-2 rounded-full text-xs transition-colors shadow">❯</button>
+                    <span class="absolute top-4 left-4 bg-softDaisy text-coconutShell text-xs font-bold px-3.5 py-1 rounded-full border border-coconutShell/20 shadow-xs z-10">Pulseras</span>
+                    <button onclick="prevPulsera()" class="absolute left-3 bg-white/80 hover:bg-white text-coconutShell w-9 h-9 rounded-full flex items-center justify-center text-xs transition-colors shadow-sm">❮</button>
+                    <button onclick="nextPulsera()" class="absolute right-3 bg-white/80 hover:bg-white text-coconutShell w-9 h-9 rounded-full flex items-center justify-center text-xs transition-colors shadow-sm">❯</button>
                 </div>
                 <div class="p-6 flex flex-col flex-grow justify-between">
                     <div>
@@ -188,20 +255,18 @@
                     </div>
                     <div class="flex items-center justify-between pt-4 border-t border-stone-100">
                         <span class="text-lg font-bold text-coconutShell">10,00 €</span>
-                        <button onclick="addToCart('Set de Pulseras Anchas', 10.00)" class="bg-softDaisy text-coconutShell px-4 py-2 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors border border-coconutShell/20">
+                        <button onclick="addToCart('Set de Pulseras Anchas', 10.00)" class="bg-softDaisy text-coconutShell px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors border border-coconutShell/20 shadow-xs">
                             Agregar al carrito
                         </button>
                     </div>
                 </div>
             </div>
 
-            <!-- ZARCILLOS -->
-
-            <!-- Zarcillos Dorados con Rojo (5.00 €)[cite: 59] -->
-            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="zarcillos">
-                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
+            <!-- ZARCILLOS: Dorados con Rojo -->
+            <div class="product-card bg-white rounded-[2.5rem] overflow-hidden shadow-xs border border-white flex flex-col group p-2" data-category="zarcillos">
+                <div class="relative h-80 overflow-hidden bg-stone-50 rounded-[2rem] flex items-center justify-center p-2">
                     <img src="zarcillo-rojo.jpg" alt="Zarcillos Dorados con Rojo" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
-                    <span class="absolute top-4 left-4 bg-dustyCoral text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow z-10">Zarcillos</span>
+                    <span class="absolute top-4 left-4 bg-dustyCoral text-coconutShell text-xs font-bold px-3.5 py-1 rounded-full shadow-xs z-10">Zarcillos</span>
                 </div>
                 <div class="p-6 flex flex-col flex-grow justify-between">
                     <div>
@@ -210,18 +275,18 @@
                     </div>
                     <div class="flex items-center justify-between pt-4 border-t border-stone-100">
                         <span class="text-lg font-bold text-coconutShell">5,00 €</span>
-                        <button onclick="addToCart('Argollas Doradas con Rojo y Cristales', 5.00)" class="bg-dustyCoral text-coconutShell px-4 py-2 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors">
+                        <button onclick="addToCart('Argollas Doradas con Rojo y Cristales', 5.00)" class="bg-dustyCoral text-coconutShell px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors shadow-xs">
                             Agregar al carrito
                         </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Zarcillos Grandes Ovalados con Pepas (7.00 €)[cite: 52] -->
-            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="zarcillos">
-                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
+            <!-- ZARCILLOS: Grandes Ovalados -->
+            <div class="product-card bg-white rounded-[2.5rem] overflow-hidden shadow-sm border border-white flex flex-col group p-2" data-category="zarcillos">
+                <div class="relative h-80 overflow-hidden bg-stone-50 rounded-[2rem] flex items-center justify-center p-2">
                     <img src="zarcillo-pepas-ovalada.jpg" alt="Zarcillos Grandes Ovalados con Pepas" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
-                    <span class="absolute top-4 left-4 bg-coconutShell text-softDaisy text-xs font-bold px-3 py-1 rounded-full shadow z-10">Zarcillos</span>
+                    <span class="absolute top-4 left-4 bg-coconutShell text-softDaisy text-xs font-bold px-3.5 py-1 rounded-full shadow-xs z-10">Zarcillos</span>
                 </div>
                 <div class="p-6 flex flex-col flex-grow justify-between">
                     <div>
@@ -230,18 +295,18 @@
                     </div>
                     <div class="flex items-center justify-between pt-4 border-t border-stone-100">
                         <span class="text-lg font-bold text-coconutShell">7,00 €</span>
-                        <button onclick="addToCart('Zarcillos Grandes Gota con Cristales', 7.00)" class="bg-coconutShell text-softDaisy px-4 py-2 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors">
+                        <button onclick="addToCart('Zarcillos Grandes Gota con Cristales', 7.00)" class="bg-coconutShell text-softDaisy px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors shadow-xs">
                             Agregar al carrito
                         </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Aretes de Colores en Acrílico (5.00 €)[cite: 57] -->
-            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="zarcillos">
-                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
+            <!-- ZARCILLOS: Acrílico -->
+            <div class="product-card bg-white rounded-[2.5rem] overflow-hidden shadow-sm border border-white flex flex-col group p-2" data-category="zarcillos">
+                <div class="relative h-80 overflow-hidden bg-stone-50 rounded-[2rem] flex items-center justify-center p-2">
                     <img src="zarcillo-carey.jpg" alt="Aretes de Colores en Acrílico" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
-                    <span class="absolute top-4 left-4 bg-pinkSand text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow z-10">Zarcillos</span>
+                    <span class="absolute top-4 left-4 bg-pinkSand text-coconutShell text-xs font-bold px-3.5 py-1 rounded-full shadow-xs z-10">Zarcillos</span>
                 </div>
                 <div class="p-6 flex flex-col flex-grow justify-between">
                     <div>
@@ -250,18 +315,18 @@
                     </div>
                     <div class="flex items-center justify-between pt-4 border-t border-stone-100">
                         <span class="text-lg font-bold text-coconutShell">5,00 €</span>
-                        <button onclick="addToCart('Zarcillos Circulares de Acrílico Multicolor', 5.00)" class="bg-pinkSand text-coconutShell px-4 py-2 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors">
+                        <button onclick="addToCart('Zarcillos Circulares de Acrílico Multicolor', 5.00)" class="bg-pinkSand text-coconutShell px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors shadow-xs">
                             Agregar al carrito
                         </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Aretes Plateados Argollas (6.00 €)[cite: 51] -->
-            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="zarcillos">
-                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
+            <!-- ZARCILLOS: Argollas Plateadas -->
+            <div class="product-card bg-white rounded-[2.5rem] overflow-hidden shadow-sm border border-white flex flex-col group p-2" data-category="zarcillos">
+                <div class="relative h-80 overflow-hidden bg-stone-50 rounded-[2rem] flex items-center justify-center p-2">
                     <img src="zarcillo-plateado -tranca.jpg" alt="Aretes Plateados Argollas" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
-                    <span class="absolute top-4 left-4 bg-softDaisy text-coconutShell text-xs font-bold px-3 py-1 rounded-full border border-coconutShell/20 shadow z-10">Zarcillos</span>
+                    <span class="absolute top-4 left-4 bg-softDaisy text-coconutShell text-xs font-bold px-3.5 py-1 rounded-full border border-coconutShell/20 shadow-xs z-10">Zarcillos</span>
                 </div>
                 <div class="p-6 flex flex-col flex-grow justify-between">
                     <div>
@@ -270,18 +335,18 @@
                     </div>
                     <div class="flex items-center justify-between pt-4 border-t border-stone-100">
                         <span class="text-lg font-bold text-coconutShell">6,00 €</span>
-                        <button onclick="addToCart('Argollas Plateadas con Estrellas y Circones', 6.00)" class="bg-softDaisy text-coconutShell px-4 py-2 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors border border-coconutShell/20">
+                        <button onclick="addToCart('Argollas Plateadas con Estrellas y Circones', 6.00)" class="bg-softDaisy text-coconutShell px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors border border-coconutShell/20 shadow-xs">
                             Agregar al carrito
                         </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Colgantes Azul y Marrón (7.00 € cada uno)[cite: 53, 54] -->
-            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="zarcillos">
-                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
+            <!-- ZARCILLOS: Colgante Azul -->
+            <div class="product-card bg-white rounded-[2.5rem] overflow-hidden shadow-sm border border-white flex flex-col group p-2" data-category="zarcillos">
+                <div class="relative h-80 overflow-hidden bg-stone-50 rounded-[2rem] flex items-center justify-center p-2">
                     <img src="zarcillo-azul-largo.jpg" alt="Colgantes Azul" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
-                    <span class="absolute top-4 left-4 bg-dustyCoral text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow z-10">Zarcillos</span>
+                    <span class="absolute top-4 left-4 bg-dustyCoral text-coconutShell text-xs font-bold px-3.5 py-1 rounded-full shadow-xs z-10">Zarcillos</span>
                 </div>
                 <div class="p-6 flex flex-col flex-grow justify-between">
                     <div>
@@ -290,17 +355,18 @@
                     </div>
                     <div class="flex items-center justify-between pt-4 border-t border-stone-100">
                         <span class="text-lg font-bold text-coconutShell">7,00 €</span>
-                        <button onclick="addToCart('Zarcillos Colgantes Azules Marmolados', 7.00)" class="bg-dustyCoral text-coconutShell px-4 py-2 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors">
+                        <button onclick="addToCart('Zarcillos Colgantes Azules Marmolados', 7.00)" class="bg-dustyCoral text-coconutShell px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors shadow-xs">
                             Agregar al carrito
                         </button>
                     </div>
                 </div>
             </div>
 
-            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="zarcillos">
-                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
+            <!-- ZARCILLOS: Colgante Marrón -->
+            <div class="product-card bg-white rounded-[2.5rem] overflow-hidden shadow-sm border border-white flex flex-col group p-2" data-category="zarcillos">
+                <div class="relative h-80 overflow-hidden bg-stone-50 rounded-[2rem] flex items-center justify-center p-2">
                     <img src="zarcillo-marron-largo.jpg" alt="Colgantes Marrón" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
-                    <span class="absolute top-4 left-4 bg-coconutShell text-softDaisy text-xs font-bold px-3 py-1 rounded-full shadow z-10">Zarcillos</span>
+                    <span class="absolute top-4 left-4 bg-coconutShell text-softDaisy text-xs font-bold px-3.5 py-1 rounded-full shadow-xs z-10">Zarcillos</span>
                 </div>
                 <div class="p-6 flex flex-col flex-grow justify-between">
                     <div>
@@ -309,18 +375,18 @@
                     </div>
                     <div class="flex items-center justify-between pt-4 border-t border-stone-100">
                         <span class="text-lg font-bold text-coconutShell">7,00 €</span>
-                        <button onclick="addToCart('Zarcillos Colgantes Marrones Cálidos', 7.00)" class="bg-coconutShell text-softDaisy px-4 py-2 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors">
+                        <button onclick="addToCart('Zarcillos Colgantes Marrones Cálidos', 7.00)" class="bg-coconutShell text-softDaisy px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors shadow-xs">
                             Agregar al carrito
                         </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Zarcillos Dorados Lisos (4.00 €)[cite: 58] -->
-            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="zarcillos">
-                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
+            <!-- ZARCILLOS: Dorados Lisos -->
+            <div class="product-card bg-white rounded-[2.5rem] overflow-hidden shadow-sm border border-white flex flex-col group p-2" data-category="zarcillos">
+                <div class="relative h-80 overflow-hidden bg-stone-50 rounded-[2rem] flex items-center justify-center p-2">
                     <img src="zarcillo-dorado.jpg" alt="Zarcillos Dorados Lisos" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
-                    <span class="absolute top-4 left-4 bg-softDaisy text-coconutShell text-xs font-bold px-3 py-1 rounded-full border border-coconutShell/20 shadow z-10">Zarcillos</span>
+                    <span class="absolute top-4 left-4 bg-softDaisy text-coconutShell text-xs font-bold px-3.5 py-1 rounded-full border border-coconutShell/20 shadow-xs z-10">Zarcillos</span>
                 </div>
                 <div class="p-6 flex flex-col flex-grow justify-between">
                     <div>
@@ -329,60 +395,20 @@
                     </div>
                     <div class="flex items-center justify-between pt-4 border-t border-stone-100">
                         <span class="text-lg font-bold text-coconutShell">4,00 €</span>
-                        <button onclick="addToCart('Zarcillos Botón Dorados Lisos', 4.00)" class="bg-softDaisy text-coconutShell px-4 py-2 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors border border-coconutShell/20">
+                        <button onclick="addToCart('Zarcillos Botón Dorados Lisos', 4.00)" class="bg-softDaisy text-coconutShell px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors border border-coconutShell/20 shadow-xs">
                             Agregar al carrito
                         </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Zarcillos Dorados Pequeños con Pepas de Colores (7.00 €)[cite: 56] -->
-            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="zarcillos">
-                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
-                    <img src="zarcillo-doradp-pepas.jpg" alt="Zarcillos Dorados con Pepas de Colores" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
-                    <span class="absolute top-4 left-4 bg-pinkSand text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow z-10">Zarcillos</span>
-                </div>
-                <div class="p-6 flex flex-col flex-grow justify-between">
-                    <div>
-                        <h3 class="text-xl font-bold text-coconutShell mb-1">Argollas Doradas Pequeñas con Cristales de Colores</h3>
-                        <p class="text-coconutShell/70 text-sm mb-4">Diseño moderno con destellos multicolor incrustados.</p>
-                    </div>
-                    <div class="flex items-center justify-between pt-4 border-t border-stone-100">
-                        <span class="text-lg font-bold text-coconutShell">7,00 €</span>
-                        <button onclick="addToCart('Argollas Doradas Pequeñas con Cristales de Colores', 7.00)" class="bg-pinkSand text-coconutShell px-4 py-2 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors">
-                            Agregar al carrito
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Zarcillos Plateados Pequeños con Pepas (7.00 €)[cite: 55] -->
-            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="zarcillos">
-                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
-                    <img src="zarcillo-plateado pepas.jpg" alt="Zarcillos Plateados con Pepas" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
-                    <span class="absolute top-4 left-4 bg-dustyCoral text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow z-10">Zarcillos</span>
-                </div>
-                <div class="p-6 flex flex-col flex-grow justify-between">
-                    <div>
-                        <h3 class="text-xl font-bold text-coconutShell mb-1">Argollas Plateadas Pequeñas con Circones</h3>
-                        <p class="text-coconutShell/70 text-sm mb-4">Elegantes argollas plateadas adornadas con circones brillantes.</p>
-                    </div>
-                    <div class="flex items-center justify-between pt-4 border-t border-stone-100">
-                        <span class="text-lg font-bold text-coconutShell">7,00 €</span>
-                        <button onclick="addToCart('Argollas Plateadas Pequeñas con Circones', 7.00)" class="bg-dustyCoral text-coconutShell px-4 py-2 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors">
-                            Agregar al carrito
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- EARCuffs (Galería deslizante - 3.00 €) -->
-            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="zarcillos">
-                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
+            <!-- EARCuffs (Galería deslizante) -->
+            <div class="product-card bg-white rounded-[2.5rem] overflow-hidden shadow-sm border border-white flex flex-col group p-2" data-category="zarcillos">
+                <div class="relative h-80 overflow-hidden bg-stone-50 rounded-[2rem] flex items-center justify-center p-2">
                     <img id="earcuff-img" src="earcuff-1.jpg" alt="Earcuffs Variedad" class="w-full h-full object-contain scale-115 transition-all duration-300">
-                    <span class="absolute top-4 left-4 bg-coconutShell text-softDaisy text-xs font-bold px-3 py-1 rounded-full shadow z-10">Zarcillos</span>
-                    <button onclick="prevEarcuff()" class="absolute left-2 bg-coconutShell/60 hover:bg-coconutShell text-white p-2 rounded-full text-xs transition-colors shadow">❮</button>
-                    <button onclick="nextEarcuff()" class="absolute right-2 bg-coconutShell/60 hover:bg-coconutShell text-white p-2 rounded-full text-xs transition-colors shadow">❯</button>
+                    <span class="absolute top-4 left-4 bg-coconutShell text-softDaisy text-xs font-bold px-3.5 py-1 rounded-full shadow-xs z-10">Zarcillos</span>
+                    <button onclick="prevEarcuff()" class="absolute left-3 bg-white/80 hover:bg-white text-coconutShell w-9 h-9 rounded-full flex items-center justify-center text-xs transition-colors shadow-sm">❮</button>
+                    <button onclick="nextEarcuff()" class="absolute right-3 bg-white/80 hover:bg-white text-coconutShell w-9 h-9 rounded-full flex items-center justify-center text-xs transition-colors shadow-sm">❯</button>
                 </div>
                 <div class="p-6 flex flex-col flex-grow justify-between">
                     <div>
@@ -391,18 +417,18 @@
                     </div>
                     <div class="flex items-center justify-between pt-4 border-t border-stone-100">
                         <span class="text-lg font-bold text-coconutShell">3,00 €</span>
-                        <button onclick="addToCart('Earcuff', 3.00)" class="bg-coconutShell text-softDaisy px-4 py-2 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors">
+                        <button onclick="addToCart('Earcuff', 3.00)" class="bg-coconutShell text-softDaisy px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors shadow-xs">
                             Agregar al carrito
                         </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Cartera Blanca Toda (20.00 €) -->
-            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="carteras">
-                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
+            <!-- CARTERAS -->
+            <div class="product-card bg-white rounded-[2.5rem] overflow-hidden shadow-sm border border-white flex flex-col group p-2" data-category="carteras">
+                <div class="relative h-80 overflow-hidden bg-stone-50 rounded-[2rem] flex items-center justify-center p-2">
                     <img src="cartera-blanca-toda.jpg" alt="Cartera Blanca Toda" class="w-full h-full object-contain scale-110 group-hover:scale-120 transition-transform duration-500">
-                    <span class="absolute top-4 left-4 bg-coconutShell text-softDaisy text-xs font-bold px-3 py-1 rounded-full shadow z-10">Carteras</span>
+                    <span class="absolute top-4 left-4 bg-coconutShell text-softDaisy text-xs font-bold px-3.5 py-1 rounded-full shadow-xs z-10">Carteras</span>
                 </div>
                 <div class="p-6 flex flex-col flex-grow justify-between">
                     <div>
@@ -411,18 +437,17 @@
                     </div>
                     <div class="flex items-center justify-between pt-4 border-t border-stone-100">
                         <span class="text-lg font-bold text-coconutShell">20,00 €</span>
-                        <button onclick="addToCart('Cartera Blanca Elegante', 20.00)" class="bg-coconutShell text-softDaisy px-4 py-2 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors">
+                        <button onclick="addToCart('Cartera Blanca Elegante', 20.00)" class="bg-coconutShell text-softDaisy px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors shadow-xs">
                             Agregar al carrito
                         </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Cartera Marrón (20.00 €) -->
-            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="carteras">
-                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
+            <div class="product-card bg-white rounded-[2.5rem] overflow-hidden shadow-sm border border-white flex flex-col group p-2" data-category="carteras">
+                <div class="relative h-80 overflow-hidden bg-stone-50 rounded-[2rem] flex items-center justify-center p-2">
                     <img src="cartera-marron-gamusa.jpg" alt="Cartera Marrón" class="w-full h-full object-contain scale-110 group-hover:scale-120 transition-transform duration-500">
-                    <span class="absolute top-4 left-4 bg-coconutShell text-softDaisy text-xs font-bold px-3 py-1 rounded-full shadow z-10">Carteras</span>
+                    <span class="absolute top-4 left-4 bg-coconutShell text-softDaisy text-xs font-bold px-3.5 py-1 rounded-full shadow-xs z-10">Carteras</span>
                 </div>
                 <div class="p-6 flex flex-col flex-grow justify-between">
                     <div>
@@ -431,18 +456,17 @@
                     </div>
                     <div class="flex items-center justify-between pt-4 border-t border-stone-100">
                         <span class="text-lg font-bold text-coconutShell">20,00 €</span>
-                        <button onclick="addToCart('Cartera Marrón Clásica', 20.00)" class="bg-coconutShell text-softDaisy px-4 py-2 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors">
+                        <button onclick="addToCart('Cartera Marrón Clásica', 20.00)" class="bg-coconutShell text-softDaisy px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors shadow-xs">
                             Agregar al carrito
                         </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Cartera Verde (22.00 €) -->
-            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="carteras">
-                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
+            <div class="product-card bg-white rounded-[2.5rem] overflow-hidden shadow-sm border border-white flex flex-col group p-2" data-category="carteras">
+                <div class="relative h-80 overflow-hidden bg-stone-50 rounded-[2rem] flex items-center justify-center p-2">
                     <img src="cartera-verde.jpg" alt="Cartera Verde" class="w-full h-full object-contain scale-110 group-hover:scale-120 transition-transform duration-500">
-                    <span class="absolute top-4 left-4 bg-coconutShell text-softDaisy text-xs font-bold px-3 py-1 rounded-full shadow z-10">Carteras</span>
+                    <span class="absolute top-4 left-4 bg-coconutShell text-softDaisy text-xs font-bold px-3.5 py-1 rounded-full shadow-xs z-10">Carteras</span>
                 </div>
                 <div class="p-6 flex flex-col flex-grow justify-between">
                     <div>
@@ -451,18 +475,17 @@
                     </div>
                     <div class="flex items-center justify-between pt-4 border-t border-stone-100">
                         <span class="text-lg font-bold text-coconutShell">22,00 €</span>
-                        <button onclick="addToCart('Cartera Verde con Accesorios', 22.00)" class="bg-coconutShell text-softDaisy px-4 py-2 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors">
+                        <button onclick="addToCart('Cartera Verde con Accesorios', 22.00)" class="bg-coconutShell text-softDaisy px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors shadow-xs">
                             Agregar al carrito
                         </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Cartera Azul de Jean (25.00 €) -->
-            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="carteras">
-                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
+            <div class="product-card bg-white rounded-[2.5rem] overflow-hidden shadow-sm border border-white flex flex-col group p-2" data-category="carteras">
+                <div class="relative h-80 overflow-hidden bg-stone-50 rounded-[2rem] flex items-center justify-center p-2">
                     <img src="cartera-azul-jean.jpg" alt="Cartera Azul de Jean" class="w-full h-full object-contain scale-110 group-hover:scale-120 transition-transform duration-500">
-                    <span class="absolute top-4 left-4 bg-coconutShell text-softDaisy text-xs font-bold px-3 py-1 rounded-full shadow z-10">Carteras</span>
+                    <span class="absolute top-4 left-4 bg-coconutShell text-softDaisy text-xs font-bold px-3.5 py-1 rounded-full shadow-xs z-10">Carteras</span>
                 </div>
                 <div class="p-6 flex flex-col flex-grow justify-between">
                     <div>
@@ -471,18 +494,17 @@
                     </div>
                     <div class="flex items-center justify-between pt-4 border-t border-stone-100">
                         <span class="text-lg font-bold text-coconutShell">25,00 €</span>
-                        <button onclick="addToCart('Cartera Azul de Jean', 25.00)" class="bg-coconutShell text-softDaisy px-4 py-2 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors">
+                        <button onclick="addToCart('Cartera Azul de Jean', 25.00)" class="bg-coconutShell text-softDaisy px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors shadow-xs">
                             Agregar al carrito
                         </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Cartera Amarilla Mantequilla (28.00 €) -->
-            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="carteras">
-                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
+            <div class="product-card bg-white rounded-[2.5rem] overflow-hidden shadow-sm border border-white flex flex-col group p-2" data-category="carteras">
+                <div class="relative h-80 overflow-hidden bg-stone-50 rounded-[2rem] flex items-center justify-center p-2">
                     <img src="cartera-amarilla.jpg" alt="Cartera Amarilla Mantequilla" class="w-full h-full object-contain scale-110 group-hover:scale-120 transition-transform duration-500">
-                    <span class="absolute top-4 left-4 bg-coconutShell text-softDaisy text-xs font-bold px-3 py-1 rounded-full shadow z-10">Carteras</span>
+                    <span class="absolute top-4 left-4 bg-coconutShell text-softDaisy text-xs font-bold px-3.5 py-1 rounded-full shadow-xs z-10">Carteras</span>
                 </div>
                 <div class="p-6 flex flex-col flex-grow justify-between">
                     <div>
@@ -491,18 +513,17 @@
                     </div>
                     <div class="flex items-center justify-between pt-4 border-t border-stone-100">
                         <span class="text-lg font-bold text-coconutShell">28,00 €</span>
-                        <button onclick="addToCart('Cartera Amarilla Mantequilla', 28.00)" class="bg-coconutShell text-softDaisy px-4 py-2 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors">
+                        <button onclick="addToCart('Cartera Amarilla Mantequilla', 28.00)" class="bg-coconutShell text-softDaisy px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors shadow-xs">
                             Agregar al carrito
                         </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Cartera Roja Animal Print (17.00 €) -->
-            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="carteras">
-                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
+            <div class="product-card bg-white rounded-[2.5rem] overflow-hidden shadow-sm border border-white flex flex-col group p-2" data-category="carteras">
+                <div class="relative h-80 overflow-hidden bg-stone-50 rounded-[2rem] flex items-center justify-center p-2">
                     <img src="cartera-roja-animal.jpg" alt="Cartera Roja Animal Print" class="w-full h-full object-contain scale-110 group-hover:scale-120 transition-transform duration-500">
-                    <span class="absolute top-4 left-4 bg-coconutShell text-softDaisy text-xs font-bold px-3 py-1 rounded-full shadow z-10">Carteras</span>
+                    <span class="absolute top-4 left-4 bg-coconutShell text-softDaisy text-xs font-bold px-3.5 py-1 rounded-full shadow-xs z-10">Carteras</span>
                 </div>
                 <div class="p-6 flex flex-col flex-grow justify-between">
                     <div>
@@ -511,18 +532,17 @@
                     </div>
                     <div class="flex items-center justify-between pt-4 border-t border-stone-100">
                         <span class="text-lg font-bold text-coconutShell">17,00 €</span>
-                        <button onclick="addToCart('Cartera Roja Animal Print', 17.00)" class="bg-coconutShell text-softDaisy px-4 py-2 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors">
+                        <button onclick="addToCart('Cartera Roja Animal Print', 17.00)" class="bg-coconutShell text-softDaisy px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors shadow-xs">
                             Agregar al carrito
                         </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Cartera Roja con Plateado (30.00 €) -->
-            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="carteras">
-                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
+            <div class="product-card bg-white rounded-[2.5rem] overflow-hidden shadow-sm border border-white flex flex-col group p-2" data-category="carteras">
+                <div class="relative h-80 overflow-hidden bg-stone-50 rounded-[2rem] flex items-center justify-center p-2">
                     <img src="cartera-roja-plateada.jpg" alt="Cartera Roja con Plateado" class="w-full h-full object-contain scale-110 group-hover:scale-120 transition-transform duration-500">
-                    <span class="absolute top-4 left-4 bg-coconutShell text-softDaisy text-xs font-bold px-3 py-1 rounded-full shadow z-10">Carteras</span>
+                    <span class="absolute top-4 left-4 bg-coconutShell text-softDaisy text-xs font-bold px-3.5 py-1 rounded-full shadow-xs z-10">Carteras</span>
                 </div>
                 <div class="p-6 flex flex-col flex-grow justify-between">
                     <div>
@@ -531,18 +551,17 @@
                     </div>
                     <div class="flex items-center justify-between pt-4 border-t border-stone-100">
                         <span class="text-lg font-bold text-coconutShell">30,00 €</span>
-                        <button onclick="addToCart('Cartera Roja con Plateado', 30.00)" class="bg-coconutShell text-softDaisy px-4 py-2 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors">
+                        <button onclick="addToCart('Cartera Roja con Plateado', 30.00)" class="bg-coconutShell text-softDaisy px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors shadow-xs">
                             Agregar al carrito
                         </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Tote Bag Blanco con Puntos (12.00 €) -->
-            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="carteras">
-                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
+            <div class="product-card bg-white rounded-[2.5rem] overflow-hidden shadow-sm border border-white flex flex-col group p-2" data-category="carteras">
+                <div class="relative h-80 overflow-hidden bg-stone-50 rounded-[2rem] flex items-center justify-center p-2">
                     <img src="totebag.jpg" alt="Tote Bag Blanco con Puntos" class="w-full h-full object-contain scale-110 group-hover:scale-120 transition-transform duration-500">
-                    <span class="absolute top-4 left-4 bg-softDaisy text-coconutShell text-xs font-bold px-3 py-1 rounded-full border border-coconutShell/20 shadow z-10">Carteras</span>
+                    <span class="absolute top-4 left-4 bg-softDaisy text-coconutShell text-xs font-bold px-3.5 py-1 rounded-full border border-coconutShell/20 shadow-xs z-10">Carteras</span>
                 </div>
                 <div class="p-6 flex flex-col flex-grow justify-between">
                     <div>
@@ -551,18 +570,17 @@
                     </div>
                     <div class="flex items-center justify-between pt-4 border-t border-stone-100">
                         <span class="text-lg font-bold text-coconutShell">12,00 €</span>
-                        <button onclick="addToCart('Tote Bag Blanco con Puntos', 12.00)" class="bg-softDaisy text-coconutShell px-4 py-2 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors border border-coconutShell/20">
+                        <button onclick="addToCart('Tote Bag Blanco con Puntos', 12.00)" class="bg-softDaisy text-coconutShell px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors border border-coconutShell/20 shadow-xs">
                             Agregar al carrito
                         </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Cartera Negra con Puntos Blancos (15.00 €) -->
-            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="carteras">
-                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
+            <div class="product-card bg-white rounded-[2.5rem] overflow-hidden shadow-sm border border-white flex flex-col group p-2" data-category="carteras">
+                <div class="relative h-80 overflow-hidden bg-stone-50 rounded-[2rem] flex items-center justify-center p-2">
                     <img src="cartera-negra-puntos.jpg" alt="Cartera Negra Puntos Blancos" class="w-full h-full object-contain scale-110 group-hover:scale-120 transition-transform duration-500">
-                    <span class="absolute top-4 left-4 bg-coconutShell text-softDaisy text-xs font-bold px-3 py-1 rounded-full shadow z-10">Carteras</span>
+                    <span class="absolute top-4 left-4 bg-coconutShell text-softDaisy text-xs font-bold px-3.5 py-1 rounded-full shadow-xs z-10">Carteras</span>
                 </div>
                 <div class="p-6 flex flex-col flex-grow justify-between">
                     <div>
@@ -571,18 +589,17 @@
                     </div>
                     <div class="flex items-center justify-between pt-4 border-t border-stone-100">
                         <span class="text-lg font-bold text-coconutShell">15,00 €</span>
-                        <button onclick="addToCart('Cartera Negra Puntos Blancos', 15.00)" class="bg-coconutShell text-softDaisy px-4 py-2 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors">
+                        <button onclick="addToCart('Cartera Negra Puntos Blancos', 15.00)" class="bg-coconutShell text-softDaisy px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors shadow-xs">
                             Agregar al carrito
                         </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Cartera Blanco con Puntos Negros (15.00 €) -->
-            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="carteras">
-                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
+            <div class="product-card bg-white rounded-[2.5rem] overflow-hidden shadow-sm border border-white flex flex-col group p-2" data-category="carteras">
+                <div class="relative h-80 overflow-hidden bg-stone-50 rounded-[2rem] flex items-center justify-center p-2">
                     <img src="cartera-blanca-puntos.jpg" alt="Cartera Blanco con Puntos Negros" class="w-full h-full object-contain scale-110 group-hover:scale-120 transition-transform duration-500">
-                    <span class="absolute top-4 left-4 bg-softDaisy text-coconutShell text-xs font-bold px-3 py-1 rounded-full border border-coconutShell/20 shadow z-10">Carteras</span>
+                    <span class="absolute top-4 left-4 bg-softDaisy text-coconutShell text-xs font-bold px-3.5 py-1 rounded-full border border-coconutShell/20 shadow-xs z-10">Carteras</span>
                 </div>
                 <div class="p-6 flex flex-col flex-grow justify-between">
                     <div>
@@ -591,18 +608,17 @@
                     </div>
                     <div class="flex items-center justify-between pt-4 border-t border-stone-100">
                         <span class="text-lg font-bold text-coconutShell">15,00 €</span>
-                        <button onclick="addToCart('Cartera Blanco con Puntos Negros', 15.00)" class="bg-softDaisy text-coconutShell px-4 py-2 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors border border-coconutShell/20">
+                        <button onclick="addToCart('Cartera Blanco con Puntos Negros', 15.00)" class="bg-softDaisy text-coconutShell px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors border border-coconutShell/20 shadow-xs">
                             Agregar al carrito
                         </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Cartera Negra Toda (25.00 €) -->
-            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="carteras">
-                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
+            <div class="product-card bg-white rounded-[2.5rem] overflow-hidden shadow-sm border border-white flex flex-col group p-2" data-category="carteras">
+                <div class="relative h-80 overflow-hidden bg-stone-50 rounded-[2rem] flex items-center justify-center p-2">
                     <img src="cartera-negra-toda.jpg" alt="Cartera Negra Toda" class="w-full h-full object-contain scale-110 group-hover:scale-120 transition-transform duration-500">
-                    <span class="absolute top-4 left-4 bg-coconutShell text-softDaisy text-xs font-bold px-3 py-1 rounded-full shadow z-10">Carteras</span>
+                    <span class="absolute top-4 left-4 bg-coconutShell text-softDaisy text-xs font-bold px-3.5 py-1 rounded-full shadow-xs z-10">Carteras</span>
                 </div>
                 <div class="p-6 flex flex-col flex-grow justify-between">
                     <div>
@@ -611,7 +627,7 @@
                     </div>
                     <div class="flex items-center justify-between pt-4 border-t border-stone-100">
                         <span class="text-lg font-bold text-coconutShell">25,00 €</span>
-                        <button onclick="addToCart('Cartera Negra Toda', 25.00)" class="bg-coconutShell text-softDaisy px-4 py-2 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors">
+                        <button onclick="addToCart('Cartera Negra Toda', 25.00)" class="bg-coconutShell text-softDaisy px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors shadow-xs">
                             Agregar al carrito
                         </button>
                     </div>
@@ -619,12 +635,10 @@
             </div>
 
             <!-- COLLARES -->
-
-            <!-- Collar de Dijes Azul (8.00 €) -->
-            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="collares">
-                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
+            <div class="product-card bg-white rounded-[2.5rem] overflow-hidden shadow-sm border border-white flex flex-col group p-2" data-category="collares">
+                <div class="relative h-80 overflow-hidden bg-stone-50 rounded-[2rem] flex items-center justify-center p-2">
                     <img src="collar-dijes-azul.jpg" alt="Collar de Dijes Azul" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
-                    <span class="absolute top-4 left-4 bg-dustyCoral text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow z-10">Collares</span>
+                    <span class="absolute top-4 left-4 bg-dustyCoral text-coconutShell text-xs font-bold px-3.5 py-1 rounded-full shadow-xs z-10">Collares</span>
                 </div>
                 <div class="p-6 flex flex-col flex-grow justify-between">
                     <div>
@@ -633,18 +647,17 @@
                     </div>
                     <div class="flex items-center justify-between pt-4 border-t border-stone-100">
                         <span class="text-lg font-bold text-coconutShell">8,00 €</span>
-                        <button onclick="addToCart('Collar de Dijes Azul', 8.00)" class="bg-dustyCoral text-coconutShell px-4 py-2 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors">
+                        <button onclick="addToCart('Collar de Dijes Azul', 8.00)" class="bg-dustyCoral text-coconutShell px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors shadow-xs">
                             Agregar al carrito
                         </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Collar de Dijes Rosado (8.00 €) -->
-            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="collares">
-                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
+            <div class="product-card bg-white rounded-[2.5rem] overflow-hidden shadow-sm border border-white flex flex-col group p-2" data-category="collares">
+                <div class="relative h-80 overflow-hidden bg-stone-50 rounded-[2rem] flex items-center justify-center p-2">
                     <img src="collar-dijes-rosa.jpg" alt="Collar de Dijes Rosado" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
-                    <span class="absolute top-4 left-4 bg-pinkSand text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow z-10">Collares</span>
+                    <span class="absolute top-4 left-4 bg-pinkSand text-coconutShell text-xs font-bold px-3.5 py-1 rounded-full shadow-xs z-10">Collares</span>
                 </div>
                 <div class="p-6 flex flex-col flex-grow justify-between">
                     <div>
@@ -653,18 +666,17 @@
                     </div>
                     <div class="flex items-center justify-between pt-4 border-t border-stone-100">
                         <span class="text-lg font-bold text-coconutShell">8,00 €</span>
-                        <button onclick="addToCart('Collar de Dijes Rosado', 8.00)" class="bg-pinkSand text-coconutShell px-4 py-2 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors">
+                        <button onclick="addToCart('Collar de Dijes Rosado', 8.00)" class="bg-pinkSand text-coconutShell px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors shadow-xs">
                             Agregar al carrito
                         </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Collar de Dijes Fucsia (8.00 €) -->
-            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="collares">
-                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
+            <div class="product-card bg-white rounded-[2.5rem] overflow-hidden shadow-sm border border-white flex flex-col group p-2" data-category="collares">
+                <div class="relative h-80 overflow-hidden bg-stone-50 rounded-[2rem] flex items-center justify-center p-2">
                     <img src="collar-fucsia.jpg" alt="Collar de Dijes Fucsia" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
-                    <span class="absolute top-4 left-4 bg-dustyCoral text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow z-10">Collares</span>
+                    <span class="absolute top-4 left-4 bg-dustyCoral text-coconutShell text-xs font-bold px-3.5 py-1 rounded-full shadow-xs z-10">Collares</span>
                 </div>
                 <div class="p-6 flex flex-col flex-grow justify-between">
                     <div>
@@ -673,18 +685,17 @@
                     </div>
                     <div class="flex items-center justify-between pt-4 border-t border-stone-100">
                         <span class="text-lg font-bold text-coconutShell">8,00 €</span>
-                        <button onclick="addToCart('Collar de Dijes Fucsia', 8.00)" class="bg-dustyCoral text-coconutShell px-4 py-2 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors">
+                        <button onclick="addToCart('Collar de Dijes Fucsia', 8.00)" class="bg-dustyCoral text-coconutShell px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors shadow-xs">
                             Agregar al carrito
                         </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Collar de Pepas Marrón (12.00 €) -->
-            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="collares">
-                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
+            <div class="product-card bg-white rounded-[2.5rem] overflow-hidden shadow-sm border border-white flex flex-col group p-2" data-category="collares">
+                <div class="relative h-80 overflow-hidden bg-stone-50 rounded-[2rem] flex items-center justify-center p-2">
                     <img src="collar-pepas-marron.jpg" alt="Collar de Pepas Marrón" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
-                    <span class="absolute top-4 left-4 bg-coconutShell text-softDaisy text-xs font-bold px-3 py-1 rounded-full shadow z-10">Collares</span>
+                    <span class="absolute top-4 left-4 bg-coconutShell text-softDaisy text-xs font-bold px-3.5 py-1 rounded-full shadow-xs z-10">Collares</span>
                 </div>
                 <div class="p-6 flex flex-col flex-grow justify-between">
                     <div>
@@ -693,18 +704,17 @@
                     </div>
                     <div class="flex items-center justify-between pt-4 border-t border-stone-100">
                         <span class="text-lg font-bold text-coconutShell">12,00 €</span>
-                        <button onclick="addToCart('Collar de Pepas Marrón', 12.00)" class="bg-coconutShell text-softDaisy px-4 py-2 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors">
+                        <button onclick="addToCart('Collar de Pepas Marrón', 12.00)" class="bg-coconutShell text-softDaisy px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors shadow-xs">
                             Agregar al carrito
                         </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Collar del Sol (7.00 €) -->
-            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="collares">
-                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
+            <div class="product-card bg-white rounded-[2.5rem] overflow-hidden shadow-sm border border-white flex flex-col group p-2" data-category="collares">
+                <div class="relative h-80 overflow-hidden bg-stone-50 rounded-[2rem] flex items-center justify-center p-2">
                     <img src="collar-cuencas-sol.jpg" alt="Collar del Sol" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
-                    <span class="absolute top-4 left-4 bg-softDaisy text-coconutShell text-xs font-bold px-3 py-1 rounded-full border border-coconutShell/20 shadow z-10">Collares</span>
+                    <span class="absolute top-4 left-4 bg-softDaisy text-coconutShell text-xs font-bold px-3.5 py-1 rounded-full border border-coconutShell/20 shadow-xs z-10">Collares</span>
                 </div>
                 <div class="p-6 flex flex-col flex-grow justify-between">
                     <div>
@@ -713,18 +723,17 @@
                     </div>
                     <div class="flex items-center justify-between pt-4 border-t border-stone-100">
                         <span class="text-lg font-bold text-coconutShell">7,00 €</span>
-                        <button onclick="addToCart('Collar del Sol', 7.00)" class="bg-softDaisy text-coconutShell px-4 py-2 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors border border-coconutShell/20">
+                        <button onclick="addToCart('Collar del Sol', 7.00)" class="bg-softDaisy text-coconutShell px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors border border-coconutShell/20 shadow-xs">
                             Agregar al carrito
                         </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Set de Dos Collares con Estrella (8.00 €) -->
-            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="collares">
-                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
+            <div class="product-card bg-white rounded-[2.5rem] overflow-hidden shadow-sm border border-white flex flex-col group p-2" data-category="collares">
+                <div class="relative h-80 overflow-hidden bg-stone-50 rounded-[2rem] flex items-center justify-center p-2">
                     <img src="conjunto-collares-estrella.jpg" alt="Set de Dos Collares con Estrella" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
-                    <span class="absolute top-4 left-4 bg-dustyCoral text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow z-10">Collares</span>
+                    <span class="absolute top-4 left-4 bg-dustyCoral text-coconutShell text-xs font-bold px-3.5 py-1 rounded-full shadow-xs z-10">Collares</span>
                 </div>
                 <div class="p-6 flex flex-col flex-grow justify-between">
                     <div>
@@ -733,18 +742,17 @@
                     </div>
                     <div class="flex items-center justify-between pt-4 border-t border-stone-100">
                         <span class="text-lg font-bold text-coconutShell">8,00 €</span>
-                        <button onclick="addToCart('Set de Dos Collares con Estrella', 8.00)" class="bg-dustyCoral text-coconutShell px-4 py-2 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors">
+                        <button onclick="addToCart('Set de Dos Collares con Estrella', 8.00)" class="bg-dustyCoral text-coconutShell px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors shadow-xs">
                             Agregar al carrito
                         </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Collar Rosa (10.00 €) -->
-            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="collares">
-                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
+            <div class="product-card bg-white rounded-[2.5rem] overflow-hidden shadow-sm border border-white flex flex-col group p-2" data-category="collares">
+                <div class="relative h-80 overflow-hidden bg-stone-50 rounded-[2rem] flex items-center justify-center p-2">
                     <img src="collar-rosa.jpg" alt="Collar Rosa" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
-                    <span class="absolute top-4 left-4 bg-pinkSand text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow z-10">Collares</span>
+                    <span class="absolute top-4 left-4 bg-pinkSand text-coconutShell text-xs font-bold px-3.5 py-1 rounded-full shadow-xs z-10">Collares</span>
                 </div>
                 <div class="p-6 flex flex-col flex-grow justify-between">
                     <div>
@@ -753,18 +761,17 @@
                     </div>
                     <div class="flex items-center justify-between pt-4 border-t border-stone-100">
                         <span class="text-lg font-bold text-coconutShell">10,00 €</span>
-                        <button onclick="addToCart('Collar de Perlas Rosadas', 10.00)" class="bg-pinkSand text-coconutShell px-4 py-2 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors">
+                        <button onclick="addToCart('Collar de Perlas Rosadas', 10.00)" class="bg-pinkSand text-coconutShell px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors shadow-xs">
                             Agregar al carrito
                         </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Collar Rojón (9.00 €) -->
-            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="collares">
-                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
+            <div class="product-card bg-white rounded-[2.5rem] overflow-hidden shadow-sm border border-white flex flex-col group p-2" data-category="collares">
+                <div class="relative h-80 overflow-hidden bg-stone-50 rounded-[2rem] flex items-center justify-center p-2">
                     <img src="collar-rojon.jpg" alt="Collar Rojón" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
-                    <span class="absolute top-4 left-4 bg-dustyCoral text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow z-10">Collares</span>
+                    <span class="absolute top-4 left-4 bg-dustyCoral text-coconutShell text-xs font-bold px-3.5 py-1 rounded-full shadow-xs z-10">Collares</span>
                 </div>
                 <div class="p-6 flex flex-col flex-grow justify-between">
                     <div>
@@ -773,18 +780,17 @@
                     </div>
                     <div class="flex items-center justify-between pt-4 border-t border-stone-100">
                         <span class="text-lg font-bold text-coconutShell">9,00 €</span>
-                        <button onclick="addToCart('Collar de Cuentas Rojas Intensas', 9.00)" class="bg-dustyCoral text-coconutShell px-4 py-2 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors">
+                        <button onclick="addToCart('Collar de Cuentas Rojas Intensas', 9.00)" class="bg-dustyCoral text-coconutShell px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors shadow-xs">
                             Agregar al carrito
                         </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Collar Rojo De (9.00 €) -->
-            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="collares">
-                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
+            <div class="product-card bg-white rounded-[2.5rem] overflow-hidden shadow-sm border border-white flex flex-col group p-2" data-category="collares">
+                <div class="relative h-80 overflow-hidden bg-stone-50 rounded-[2rem] flex items-center justify-center p-2">
                     <img src="collar-rojode.jpg" alt="Collar Rojo De" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
-                    <span class="absolute top-4 left-4 bg-dustyCoral text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow z-10">Collares</span>
+                    <span class="absolute top-4 left-4 bg-dustyCoral text-coconutShell text-xs font-bold px-3.5 py-1 rounded-full shadow-xs z-10">Collares</span>
                 </div>
                 <div class="p-6 flex flex-col flex-grow justify-between">
                     <div>
@@ -793,18 +799,17 @@
                     </div>
                     <div class="flex items-center justify-between pt-4 border-t border-stone-100">
                         <span class="text-lg font-bold text-coconutShell">9,00 €</span>
-                        <button onclick="addToCart('Collar Rojo Clásico', 9.00)" class="bg-dustyCoral text-coconutShell px-4 py-2 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors">
+                        <button onclick="addToCart('Collar Rojo Clásico', 9.00)" class="bg-dustyCoral text-coconutShell px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors shadow-xs">
                             Agregar al carrito
                         </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Collar Verde / Pepas Multicolor (9.00 €) -->
-            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="collares">
-                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
+            <div class="product-card bg-white rounded-[2.5rem] overflow-hidden shadow-sm border border-white flex flex-col group p-2" data-category="collares">
+                <div class="relative h-80 overflow-hidden bg-stone-50 rounded-[2rem] flex items-center justify-center p-2">
                     <img src="collar-pepas-verde.jpg" alt="Collar Verde Multicolor" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
-                    <span class="absolute top-4 left-4 bg-softDaisy text-coconutShell text-xs font-bold px-3 py-1 rounded-full border border-coconutShell/20 shadow z-10">Collares</span>
+                    <span class="absolute top-4 left-4 bg-softDaisy text-coconutShell text-xs font-bold px-3.5 py-1 rounded-full border border-coconutShell/20 shadow-xs z-10">Collares</span>
                 </div>
                 <div class="p-6 flex flex-col flex-grow justify-between">
                     <div>
@@ -813,7 +818,7 @@
                     </div>
                     <div class="flex items-center justify-between pt-4 border-t border-stone-100">
                         <span class="text-lg font-bold text-coconutShell">9,00 €</span>
-                        <button onclick="addToCart('Collar Multicolor Tonos Tierra y Verde', 9.00)" class="bg-softDaisy text-coconutShell px-4 py-2 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors border border-coconutShell/20">
+                        <button onclick="addToCart('Collar Multicolor Tonos Tierra y Verde', 9.00)" class="bg-softDaisy text-coconutShell px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors border border-coconutShell/20 shadow-xs">
                             Agregar al carrito
                         </button>
                     </div>
@@ -821,408 +826,11 @@
             </div>
 
             <!-- LENTES -->
-
-            <!-- Lentes Amarillos (8.00 €) -->
-            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="lentes">
-                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
+            <div class="product-card bg-white rounded-[2.5rem] overflow-hidden shadow-sm border border-white flex flex-col group p-2" data-category="lentes">
+                <div class="relative h-80 overflow-hidden bg-stone-50 rounded-[2rem] flex items-center justify-center p-2">
                     <img src="lentes-amarillos.jpg" alt="Lentes Amarillos" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
-                    <span class="absolute top-4 left-4 bg-dustyCoral text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow z-10">Lentes</span>
+                    <span class="absolute top-4 left-4 bg-dustyCoral text-coconutShell text-xs font-bold px-3.5 py-1 rounded-full shadow-xs z-10">Lentes</span>
                 </div>
                 <div class="p-6 flex flex-col flex-grow justify-between">
                     <div>
                         <h3 class="text-xl font-bold text-coconutShell mb-1">Lentes Estilo Vintage Amarillos</h3>
-                        <p class="text-coconutShell/70 text-sm mb-4">Montura moderna con lunas amarillas translúcidas.</p>
-                    </div>
-                    <div class="flex items-center justify-between pt-4 border-t border-stone-100">
-                        <span class="text-lg font-bold text-coconutShell">8,00 €</span>
-                        <button onclick="addToCart('Lentes Estilo Vintage Amarillos', 8.00)" class="bg-dustyCoral text-coconutShell px-4 py-2 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors">
-                            Agregar al carrito
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Lentes Marrones (8.00 €) -->
-            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="lentes">
-                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
-                    <img src="lentes-marrones.jpg" alt="Lentes Marrones" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
-                    <span class="absolute top-4 left-4 bg-pinkSand text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow z-10">Lentes</span>
-                </div>
-                <div class="p-6 flex flex-col flex-grow justify-between">
-                    <div>
-                        <h3 class="text-xl font-bold text-coconutShell mb-1">Lentes Estilo Aviador Marrones</h3>
-                        <p class="text-coconutShell/70 text-sm mb-4">Tonos cálidos y sofisticados para complementar tu look.</p>
-                    </div>
-                    <div class="flex items-center justify-between pt-4 border-t border-stone-100">
-                        <span class="text-lg font-bold text-coconutShell">8,00 €</span>
-                        <button onclick="addToCart('Lentes Estilo Aviador Marrones', 8.00)" class="bg-pinkSand text-coconutShell px-4 py-2 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors">
-                            Agregar al carrito
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Lentes Animal Print (8.00 €) -->
-            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="lentes">
-                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
-                    <img src="lentes-animalprint.jpg" alt="Lentes Animal Print" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
-                    <span class="absolute top-4 left-4 bg-softDaisy text-coconutShell text-xs font-bold px-3 py-1 rounded-full border border-coconutShell/20 shadow z-10">Lentes</span>
-                </div>
-                <div class="p-6 flex flex-col flex-grow justify-between">
-                    <div>
-                        <h3 class="text-xl font-bold text-coconutShell mb-1">Lentes Animal Print</h3>
-                        <p class="text-coconutShell/70 text-sm mb-4">Estampado clásico carey con lunas ámbar en tendencia.</p>
-                    </div>
-                    <div class="flex items-center justify-between pt-4 border-t border-stone-100">
-                        <span class="text-lg font-bold text-coconutShell">8,00 €</span>
-                        <button onclick="addToCart('Lentes Animal Print', 8.00)" class="bg-softDaisy text-coconutShell px-4 py-2 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors border border-coconutShell/20">
-                            Agregar al carrito
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- MONEDEROS -->
-
-            <!-- Monedero Blanco con Puntos (10.00 €) -->
-            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="monederos">
-                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
-                    <img src="billetera blanca puntos.jpg" alt="Monedero Blanco con Puntos" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
-                    <span class="absolute top-4 left-4 bg-softDaisy text-coconutShell text-xs font-bold px-3 py-1 rounded-full border border-coconutShell/20 shadow z-10">Monederos</span>
-                </div>
-                <div class="p-6 flex flex-col flex-grow justify-between">
-                    <div>
-                        <h3 class="text-xl font-bold text-coconutShell mb-1">Monedero Blanco con Puntos Negros</h3>
-                        <p class="text-coconutShell/70 text-sm mb-4">Elegante diseño estilo sobre con lunares negros y cierre seguro.</p>
-                    </div>
-                    <div class="flex items-center justify-between pt-4 border-t border-stone-100">
-                        <span class="text-lg font-bold text-coconutShell">10,00 €</span>
-                        <button onclick="addToCart('Monedero Blanco con Puntos Negros', 10.00)" class="bg-softDaisy text-coconutShell px-4 py-2 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors border border-coconutShell/20">
-                            Agregar al carrito
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Monedero Negro con Puntos (8.00 €) -->
-            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="monederos">
-                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
-                    <img src="monedero-negro.jpg" alt="Monedero Negro con Puntos" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
-                    <span class="absolute top-4 left-4 bg-coconutShell text-softDaisy text-xs font-bold px-3 py-1 rounded-full shadow z-10">Monederos</span>
-                </div>
-                <div class="p-6 flex flex-col flex-grow justify-between">
-                    <div>
-                        <h3 class="text-xl font-bold text-coconutShell mb-1">Monedero Negro con Puntos Blancos</h3>
-                        <p class="text-coconutShell/70 text-sm mb-4">Elegante tarjetero y monedero brillante con lunares.</p>
-                    </div>
-                    <div class="flex items-center justify-between pt-4 border-t border-stone-100">
-                        <span class="text-lg font-bold text-coconutShell">8,00 €</span>
-                        <button onclick="addToCart('Monedero Negro con Puntos Blancos', 8.00)" class="bg-coconutShell text-softDaisy px-4 py-2 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors">
-                            Agregar al carrito
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Monedero Marrón con Puntos (10.00 €) -->
-            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="monederos">
-                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
-                    <img src="monedero-marron.jpg" alt="Monedero Marrón con Puntos" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
-                    <span class="absolute top-4 left-4 bg-pinkSand text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow z-10">Monederos</span>
-                </div>
-                <div class="p-6 flex flex-col flex-grow justify-between">
-                    <div>
-                        <h3 class="text-xl font-bold text-coconutShell mb-1">Monedero Marrón con Puntos y Pompón</h3>
-                        <p class="text-coconutShell/70 text-sm mb-4">Práctico tarjetero y monedero con encantador detalle rosa.</p>
-                    </div>
-                    <div class="flex items-center justify-between pt-4 border-t border-stone-100">
-                        <span class="text-lg font-bold text-coconutShell">10,00 €</span>
-                        <button onclick="addToCart('Monedero Marrón con Puntos', 10.00)" class="bg-pinkSand text-coconutShell px-4 py-2 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors">
-                            Agregar al carrito
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Monedero Blanco con Puntos Negros (8.00 €) -->
-            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="monederos">
-                <div class="relative h-80 overflow-hidden bg-stone-50 flex items-center justify-center p-2">
-                    <img src="monedero-blanco.jpg" alt="Monedero Blanco con Puntos Negros" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
-                    <span class="absolute top-4 left-4 bg-softDaisy text-coconutShell text-xs font-bold px-3 py-1 rounded-full border border-coconutShell/20 shadow z-10">Monederos</span>
-                </div>
-                <div class="p-6 flex flex-col flex-grow justify-between">
-                    <div>
-                        <h3 class="text-xl font-bold text-coconutShell mb-1">Monedero Blanco Puntos Negros</h3>
-                        <p class="text-coconutShell/70 text-sm mb-4">Diseño moderno con correa de mano para mayor comodidad.</p>
-                    </div>
-                    <div class="flex items-center justify-between pt-4 border-t border-stone-100">
-                        <span class="text-lg font-bold text-coconutShell">8,00 €</span>
-                        <button onclick="addToCart('Monedero Blanco Puntos Negros', 8.00)" class="bg-softDaisy text-coconutShell px-4 py-2 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors border border-coconutShell/20">
-                            Agregar al carrito
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Información de Contacto -->
-    <section id="contacto" class="py-20 bg-coconutShell text-softDaisy px-4 sm:px-6 lg:px-8">
-        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div class="space-y-6">
-                <span class="bg-dustyCoral/20 text-softDaisy text-xs uppercase tracking-widest px-4 py-2 rounded-full font-bold border border-dustyCoral/30">
-                    Estamos en contacto
-                </span>
-                <h2 class="text-4xl font-bold font-serif">¿Lista para encontrar tu detalle deseado?</h2>
-                <p class="text-softDaisy/80 leading-relaxed font-light">
-                    Escríbenos directamente, también trabajamos bajo pedido del producto que desees y no tengamos, además tenemos envíos nacionales 🇻🇪📦
-                </p>
-                <div class="space-y-4 pt-2">
-                    <!-- Teléfono / WhatsApp -->
-                    <a href="https://wa.me/584227555570" target="_blank" class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 hover:bg-white/10 transition-colors border border-white/10">
-                        <div class="w-10 h-10 rounded-full bg-[#25D366] text-white flex items-center justify-center font-bold shadow">
-                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-                        </div>
-                        <div>
-                            <p class="text-xs text-softDaisy/60 uppercase tracking-wider">Teléfono / WhatsApp</p>
-                            <p class="text-lg font-bold text-softDaisy">0422-7555570</p>
-                        </div>
-                    </a>
-                    <!-- Instagram -->
-                    <a href="https://instagram.com/Kairo_vall" target="_blank" class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 hover:bg-white/10 transition-colors border border-white/10">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-[#f58529] via-[#dd2a7b] to-[#8134af] text-white flex items-center justify-center font-bold shadow">
-                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                        </div>
-                        <div>
-                            <p class="text-xs text-softDaisy/60 uppercase tracking-wider">Instagram Oficial</p>
-                            <p class="text-lg font-bold text-softDaisy">@Kairo_vall</p>
-                        </div>
-                    </a>
-                    <!-- Ubicación -->
-                    <div class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/10">
-                        <div class="w-10 h-10 rounded-full bg-dustyCoral text-coconutShell flex items-center justify-center font-bold">📍</div>
-                        <div>
-                            <p class="text-xs text-softDaisy/60 uppercase tracking-wider">Ubicación</p>
-                            <p class="text-lg font-bold text-coconutShell">Valencia, Carabobo</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Formulario de Pedido rápido -->
-            <div class="bg-white/10 p-8 rounded-3xl backdrop-blur-md border border-white/10 space-y-4">
-                <h3 class="text-2xl font-bold font-serif mb-2">Envíanos un mensaje rápido</h3>
-                <div>
-                    <label class="block text-xs uppercase tracking-wider text-softDaisy/70 mb-1">Tu Nombre</label>
-                    <input type="text" id="client-name" placeholder="Ej. María Pérez" class="w-full bg-white/5 border border-white/20 rounded-xl px-4 py-3 text-softDaisy placeholder-softDaisy/40 focus:outline-none focus:border-dustyCoral">
-                </div>
-                <div>
-                    <label class="block text-xs uppercase tracking-wider text-softDaisy/70 mb-1">¿Qué detalle deseas?</label>
-                    <textarea id="client-msg" rows="3" placeholder="Cuéntanos qué producto o accesorio buscas..." class="w-full bg-white/5 border border-white/20 rounded-xl px-4 py-3 text-softDaisy placeholder-softDaisy/40 focus:outline-none focus:border-dustyCoral"></textarea>
-                </div>
-                <button onclick="sendWhatsAppMessage()" class="w-full bg-dustyCoral text-coconutShell py-4 rounded-xl font-bold hover:bg-softDaisy transition-colors shadow-lg">
-                    Enviar mensaje por WhatsApp
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-black/90 text-softDaisy/60 py-8 px-4 text-center text-sm border-t border-white/10">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div class="flex items-center gap-2">
-                <span class="font-serif font-bold text-softDaisy">kairo</span>
-                <span>© 2026 - Todos los derechos reservados</span>
-            </div>
-            <p>Valencia, Carabobo - Venezuela</p>
-        </div>
-    </footer>
-
-    <!-- Modal del Carrito de Compras -->
-    <div id="cart-modal" class="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm hidden items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-md w-full p-6 text-coconutShell shadow-2xl relative animate-in fade-in zoom-in duration-200">
-            <div class="flex items-center justify-between pb-4 border-b border-stone-100">
-                <h3 class="text-2xl font-bold font-serif">Tu Carrito KaiRo</h3>
-                <button onclick="toggleCart()" class="w-8 h-8 rounded-full bg-stone-100 flex items-center justify-center font-bold hover:bg-stone-200">✕</button>
-            </div>
-            <div id="cart-items" class="py-6 max-h-60 overflow-y-auto space-y-4">
-                <p class="text-center text-stone-400 py-4">Tu carrito está vacío</p>
-            </div>
-            <div class="pt-4 border-t border-stone-100 space-y-4">
-                <div class="flex items-center justify-between font-bold text-lg">
-                    <span>Total:</span>
-                    <span id="cart-total">0,00 €</span>
-                </div>
-                <button onclick="checkoutWhatsApp()" class="w-full bg-coconutShell text-softDaisy py-3.5 rounded-xl font-bold hover:bg-dustyCoral hover:text-coconutShell transition-colors shadow">
-                    Finalizar pedido por WhatsApp
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Scripts de Interactividad -->
-    <script>
-        let cart = [];
-
-        // Galería deslizante para Anillos (Set de Anillos - 8,00 €)
-        const anilloImages = [
-            "set-anillos.jpg"
-        ];
-        let currentAnilloIndex = 0;
-
-        function nextAnillo() {
-            currentAnilloIndex = (currentAnilloIndex + 1) % anilloImages.length;
-            document.getElementById('anillo-img').src = anilloImages[currentAnilloIndex];
-        }
-
-        function prevAnillo() {
-            currentAnilloIndex = (currentAnilloIndex - 1 + anilloImages.length) % anilloImages.length;
-            document.getElementById('anillo-img').src = anilloImages[currentAnilloIndex];
-        }
-
-        // Galería deslizante para Pulseras (Sets de Pulseras - 10,00 €)[cite: 70, 71, 72]
-        const pulseraImages = [
-            "set-1.jpg",
-            "set-2.jpg",
-            "set-3.jpg"
-        ];
-        let currentPulseraIndex = 0;
-
-        function nextPulsera() {
-            currentPulseraIndex = (currentPulseraIndex + 1) % pulseraImages.length;
-            document.getElementById('pulsera-img').src = pulseraImages[currentPulseraIndex];
-        }
-
-        function prevPulsera() {
-            currentPulseraIndex = (currentPulseraIndex - 1 + pulseraImages.length) % pulseraImages.length;
-            document.getElementById('pulsera-img').src = pulseraImages[currentPulseraIndex];
-        }
-
-        // Galería deslizante para Earcuffs
-        const earcuffImages = [
-            "earcuff-1.jpg",
-            "earcuff-2.jpg",
-            "earcuff-3.jpg",
-            "earcuff-4.jpg",
-            "earcuff-5.jpg",
-            "earcuff-6.jpg",
-            "earcuff-7.jpg",
-            "earcuff-8.jpg",
-            "earcuff-9.jpg"
-        ];
-        let currentEarcuffIndex = 0;
-
-        function nextEarcuff() {
-            currentEarcuffIndex = (currentEarcuffIndex + 1) % earcuffImages.length;
-            document.getElementById('earcuff-img').src = earcuffImages[currentEarcuffIndex];
-        }
-
-        function prevEarcuff() {
-            currentEarcuffIndex = (currentEarcuffIndex - 1 + earcuffImages.length) % earcuffImages.length;
-            document.getElementById('earcuff-img').src = earcuffImages[currentEarcuffIndex];
-        }
-
-        function toggleCart() {
-            const modal = document.getElementById('cart-modal');
-            modal.classList.toggle('hidden');
-            modal.classList.toggle('flex');
-        }
-
-        function addToCart(name, price) {
-            const existing = cart.find(item => item.name === name);
-            if (existing) {
-                existing.quantity += 1;
-            } else {
-                cart.push({ name, price, quantity: 1 });
-            }
-            updateCartUI();
-            alert(`¡"${name}" agregado al carrito con éxito!`);
-        }
-
-        function updateCartUI() {
-            const countEl = document.getElementById('cart-count');
-            const itemsEl = document.getElementById('cart-items');
-            const totalEl = document.getElementById('cart-total');
-
-            const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
-            countEl.textContent = totalCount;
-
-            if (cart.length === 0) {
-                itemsEl.innerHTML = '<p class="text-center text-stone-400 py-4">Tu carrito está vacío</p>';
-                totalEl.textContent = '0,00 €';
-                return;
-            }
-
-            let html = '';
-            let total = 0;
-            cart.forEach((item, index) => {
-                total += item.price * item.quantity;
-                html += `
-                    <div class="flex items-center justify-between bg-stone-50 p-3 rounded-2xl">
-                        <div>
-                            <h4 class="font-bold text-sm">${item.name}</h4>
-                            <p class="text-xs text-stone-500">${item.price.toFixed(2).replace('.', ',')} € x ${item.quantity}</p>
-                        </div>
-                        <button onclick="removeItem(${index})" class="text-red-500 text-xs font-bold px-2 py-1 bg-red-50 rounded-lg hover:bg-red-100">Eliminar</button>
-                    </div>
-                `;
-            });
-            itemsEl.innerHTML = html;
-            totalEl.textContent = `${total.toFixed(2).replace('.', ',')} €`;
-        }
-
-        function removeItem(index) {
-            cart.splice(index, 1);
-            updateCartUI();
-        }
-
-        function checkoutWhatsApp() {
-            if (cart.length === 0) {
-                alert('Tu carrito está vacío.');
-                return;
-            }
-            let text = '¡Hola KaiRo! Quisiera hacer el siguiente pedido:\n\n';
-            let total = 0;
-            cart.forEach(item => {
-                text += `- ${item.quantity}x ${item.name} (${(item.price * item.quantity).toFixed(2).replace('.', ',')} €)\n`;
-                total += item.price * item.quantity;
-            });
-            text += `\n*Total a pagar: ${total.toFixed(2).replace('.', ',')} €*\n\n¡Espero su respuesta para coordinar el pago y envío en Valencia!`;
-            
-            const encoded = encodeURIComponent(text);
-            window.open(`https://wa.me/584227555570?text=${encoded}`, '_blank');
-        }
-
-        function sendWhatsAppMessage() {
-            const name = document.getElementById('client-name').value.trim();
-            const msg = document.getElementById('client-msg').value.trim();
-            
-            if (!name || !msg) {
-                alert('Por favor completa tu nombre y el mensaje antes de enviar.');
-                return;
-            }
-            
-            const text = `Hola, soy ${name}. ${msg}`;
-            const encoded = encodeURIComponent(text);
-            window.open(`https://wa.me/584227555570?text=${encoded}`, '_blank');
-        }
-
-        function filterCategory(category) {
-            const cards = document.querySelectorAll('.product-card');
-            const buttons = document.querySelectorAll('.cat-btn');
-
-            buttons.forEach(btn => btn.classList.remove('bg-coconutShell', 'text-softDaisy', 'shadow'));
-            event.target.classList.add('bg-coconutShell', 'text-softDaisy', 'shadow');
-
-            cards.forEach(card => {
-                if (category === 'all' || card.dataset.category === category) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-    </script>
-</body>
-</html>
