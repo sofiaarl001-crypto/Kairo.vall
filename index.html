@@ -55,7 +55,7 @@
             <!-- Menú de Navegación -->
             <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
                 <a href="#inicio" class="hover:text-dustyCoral transition-colors">Inicio</a>
-                <a href="#destacados" class="hover:text-dustyCoral transition-colors">Favoritos</a>
+                <a href="#destacados" class="hover:text-dustyCoral transition-colors">Favoritos de la Semana</a>
                 <a href="#catalogo" class="hover:text-dustyCoral transition-colors">Catálogo</a>
                 <a href="#contacto" class="hover:text-dustyCoral transition-colors">Contacto</a>
             </nav>
@@ -104,19 +104,19 @@
             <div class="lg:col-span-5 h-[420px] rounded-[2.5rem] overflow-hidden shadow-md relative bg-pinkSand/20 border border-pinkSand/40 flex items-center justify-center p-6">
                 <img src="cartera-azul-jean.jpg" alt="Detalle Destacado KaiRo" class="w-full h-full object-contain scale-110 drop-shadow-lg">
                 <div class="absolute bottom-6 left-6 bg-white/90 backdrop-blur-md px-5 py-2.5 rounded-2xl shadow-sm border border-stone-100">
-                    <p class="text-xs uppercase tracking-wider text-coconutShell/60 font-bold">Nueva Tendencia</p>
+                    <p class="text-xs uppercase tracking-wider text-coconutShell/60 font-bold">Favoritos de la Semana</p>
                     <p class="text-sm font-serif font-bold text-coconutShell">Accesorios Exclusivos</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sección de Productos Destacados (Carrusel / Barra Móvil) -->
+    <!-- Sección de Favoritos de la Semana (Carrusel Automático con tus flyers) -->
     <section id="destacados" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between mb-8">
             <div>
-                <h2 class="text-3xl font-bold font-serif text-coconutShell">✦ New Favorites</h2>
-                <p class="text-coconutShell/70 text-sm mt-1">Nuestros accesorios más buscados de la temporada</p>
+                <h2 class="text-3xl font-bold font-serif text-coconutShell">✦ Favoritos de la Semana</h2>
+                <p class="text-coconutShell/70 text-sm mt-1">Nuestros accesorios estrella destacados en promoción</p>
             </div>
             <div class="flex items-center gap-2">
                 <button onclick="scrollFeatured('left')" class="w-10 h-10 rounded-full bg-white border border-stone-200 flex items-center justify-center hover:bg-stone-50 transition-colors shadow-sm">❮</button>
@@ -125,73 +125,28 @@
         </div>
 
         <div id="featured-slider" class="flex gap-6 overflow-x-auto no-scrollbar scroll-smooth pb-4 px-1">
-            <div class="min-w-[260px] sm:min-w-[280px] bg-white rounded-3xl p-4 shadow-sm border border-stone-100 flex flex-col justify-between group">
-                <div class="h-64 bg-stone-50 rounded-2xl overflow-hidden flex items-center justify-center relative p-2">
-                    <img src="cartera-blanca-toda.jpg" alt="Cartera Blanca Elegante" class="w-full h-full object-contain scale-110 group-hover:scale-120 transition-transform duration-500">
-                    <span class="absolute top-3 left-3 bg-coconutShell text-softDaisy text-[10px] font-bold px-2.5 py-1 rounded-full">Carteras</span>
-                </div>
-                <div class="pt-4 px-2 flex items-center justify-between">
-                    <div>
-                        <h4 class="font-bold text-sm text-coconutShell">Cartera Blanca Elegante</h4>
-                        <p class="text-xs text-coconutShell/70 mt-0.5">20,00 €</p>
-                    </div>
-                    <button onclick="addToCart('Cartera Blanca Elegante', 20.00)" class="w-9 h-9 rounded-full bg-dustyCoral text-coconutShell flex items-center justify-center font-bold hover:bg-coconutShell hover:text-softDaisy transition-colors shadow-sm">+</button>
+            <!-- Flyer 1 -->
+            <div class="min-w-[280px] sm:min-w-[320px] bg-white rounded-3xl p-3 shadow-sm border border-stone-100 flex flex-col justify-between group overflow-hidden">
+                <div class="h-[400px] bg-stone-50 rounded-2xl overflow-hidden flex items-center justify-center relative">
+                    <img src="fav-cartera-estrella.jpg" alt="Favorito Cartera Estrellas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 </div>
             </div>
-
-            <div class="min-w-[260px] sm:min-w-[280px] bg-white rounded-3xl p-4 shadow-sm border border-stone-100 flex flex-col justify-between group">
-                <div class="h-64 bg-stone-50 rounded-2xl overflow-hidden flex items-center justify-center relative p-2">
-                    <img src="cartera-verde.jpg" alt="Cartera Verde" class="w-full h-full object-contain scale-110 group-hover:scale-120 transition-transform duration-500">
-                    <span class="absolute top-3 left-3 bg-coconutShell text-softDaisy text-[10px] font-bold px-2.5 py-1 rounded-full">Carteras</span>
-                </div>
-                <div class="pt-4 px-2 flex items-center justify-between">
-                    <div>
-                        <h4 class="font-bold text-sm text-coconutShell">Cartera Verde con Accesorios</h4>
-                        <p class="text-xs text-coconutShell/70 mt-0.5">22,00 €</p>
-                    </div>
-                    <button onclick="addToCart('Cartera Verde con Accesorios', 22.00)" class="w-9 h-9 rounded-full bg-dustyCoral text-coconutShell flex items-center justify-center font-bold hover:bg-coconutShell hover:text-softDaisy transition-colors shadow-sm">+</button>
+            <!-- Flyer 2 -->
+            <div class="min-w-[280px] sm:min-w-[320px] bg-white rounded-3xl p-3 shadow-sm border border-stone-100 flex flex-col justify-between group overflow-hidden">
+                <div class="h-[400px] bg-stone-50 rounded-2xl overflow-hidden flex items-center justify-center relative">
+                    <img src="fav-anillos.jpg" alt="Favorito Anillos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 </div>
             </div>
-
-            <div class="min-w-[260px] sm:min-w-[280px] bg-white rounded-3xl p-4 shadow-sm border border-stone-100 flex flex-col justify-between group">
-                <div class="h-64 bg-stone-50 rounded-2xl overflow-hidden flex items-center justify-center relative p-2">
-                    <img src="collar-dijes-azul.jpg" alt="Collar de Dijes Azul" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
-                    <span class="absolute top-4 left-4 bg-dustyCoral text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow z-10">Collares</span>
-                </div>
-                <div class="pt-4 px-2 flex items-center justify-between">
-                    <div>
-                        <h4 class="font-bold text-sm text-coconutShell">Collar de Dijes Azul</h4>
-                        <p class="text-xs text-coconutShell/70 mt-0.5">8,00 €</p>
-                    </div>
-                    <button onclick="addToCart('Collar de Dijes Azul', 8.00)" class="w-9 h-9 rounded-full bg-dustyCoral text-coconutShell flex items-center justify-center font-bold hover:bg-coconutShell hover:text-softDaisy transition-colors shadow-sm">+</button>
+            <!-- Flyer 3 -->
+            <div class="min-w-[280px] sm:min-w-[320px] bg-white rounded-3xl p-3 shadow-sm border border-stone-100 flex flex-col justify-between group overflow-hidden">
+                <div class="h-[400px] bg-stone-50 rounded-2xl overflow-hidden flex items-center justify-center relative">
+                    <img src="fav-pulseras.jpg" alt="Favorito Pulseras" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 </div>
             </div>
-
-            <div class="min-w-[260px] sm:min-w-[280px] bg-white rounded-3xl p-4 shadow-sm border border-stone-100 flex flex-col justify-between group">
-                <div class="h-64 bg-stone-50 rounded-2xl overflow-hidden flex items-center justify-center relative p-2">
-                    <img src="set-1.jpg" alt="Set de Pulseras" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
-                    <span class="absolute top-4 left-4 bg-softDaisy text-coconutShell text-xs font-bold px-3 py-1 rounded-full border border-coconutShell/20 shadow z-10">Pulseras</span>
-                </div>
-                <div class="pt-4 px-2 flex items-center justify-between">
-                    <div>
-                        <h4 class="font-bold text-sm text-coconutShell">Set de Pulseras Anchas</h4>
-                        <p class="text-xs text-coconutShell/70 mt-0.5">10,00 €</p>
-                    </div>
-                    <button onclick="addToCart('Set de Pulseras Anchas', 10.00)" class="w-9 h-9 rounded-full bg-dustyCoral text-coconutShell flex items-center justify-center font-bold hover:bg-coconutShell hover:text-softDaisy transition-colors shadow-sm">+</button>
-                </div>
-            </div>
-
-            <div class="min-w-[260px] sm:min-w-[280px] bg-white rounded-3xl p-4 shadow-sm border border-stone-100 flex flex-col justify-between group">
-                <div class="h-64 bg-stone-50 rounded-2xl overflow-hidden flex items-center justify-center relative p-2">
-                    <img src="zarcillo-rojo.jpg" alt="Argollas Doradas con Rojo" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
-                    <span class="absolute top-3 left-3 bg-dustyCoral text-coconutShell text-[10px] font-bold px-2.5 py-1 rounded-full">Zarcillos</span>
-                </div>
-                <div class="pt-4 px-2 flex items-center justify-between">
-                    <div>
-                        <h4 class="font-bold text-sm text-coconutShell">Argollas Doradas con Rojo</h4>
-                        <p class="text-xs text-coconutShell/70 mt-0.5">5,00 €</p>
-                    </div>
-                    <button onclick="addToCart('Argollas Doradas con Rojo y Cristales', 5.00)" class="w-9 h-9 rounded-full bg-dustyCoral text-coconutShell flex items-center justify-center font-bold hover:bg-coconutShell hover:text-softDaisy transition-colors shadow-sm">+</button>
+            <!-- Flyer 4 -->
+            <div class="min-w-[280px] sm:min-w-[320px] bg-white rounded-3xl p-3 shadow-sm border border-stone-100 flex flex-col justify-between group overflow-hidden">
+                <div class="h-[400px] bg-stone-50 rounded-2xl overflow-hidden flex items-center justify-center relative">
+                    <img src="fav-cartera.jpg" alt="Favorito Cartera Charol" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 </div>
             </div>
         </div>
@@ -221,7 +176,7 @@
         <!-- Grid de Productos -->
         <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             
-            <!-- ANILLOS (Galería deslizante - uno por uno a 4,00 €) -->
+            <!-- ANILLOS -->
             <div class="product-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-stone-100 flex flex-col group p-2" data-category="anillos">
                 <div class="relative h-72 overflow-hidden bg-stone-50/70 rounded-[1.5rem] flex items-center justify-center p-2">
                     <img id="anillo-img" src="anillo-1_3.jpg" alt="Anillos Variedad" class="w-full h-full object-contain scale-115 transition-all duration-300">
@@ -243,7 +198,7 @@
                 </div>
             </div>
 
-            <!-- SETS DE PULSERAS (Galería deslizante - 10,00 €) -->
+            <!-- PULSERAS -->
             <div class="product-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-stone-100 flex flex-col group p-2" data-category="pulseras">
                 <div class="relative h-72 overflow-hidden bg-stone-50/70 rounded-[1.5rem] flex items-center justify-center p-2">
                     <img id="pulsera-img" src="set-1.jpg" alt="Sets de Pulseras" class="w-full h-full object-contain scale-115 transition-all duration-300">
@@ -918,7 +873,7 @@
                 </div>
             </div>
 
-            <!-- MONEDEROS (Con las nuevas imágenes actualizadas) -->
+            <!-- MONEDEROS -->
             <div class="product-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-stone-100 flex flex-col group p-2" data-category="monederos">
                 <div class="relative h-72 overflow-hidden bg-stone-50/70 rounded-[1.5rem] flex items-center justify-center p-2">
                     <img src="menedero-blanco-p_2.jpg" alt="Monedero Blanco con Puntos" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
@@ -1115,7 +1070,7 @@
             document.getElementById('anillo-img').src = anilloImages[currentAnilloIndex];
         }
 
-        // Galería deslizante para Pulseras (Sets)[cite: 70, 71, 72]
+        // Galería deslizante para Pulseras (Sets)
         const pulseraImages = [
             "set-1.jpg",
             "set-2.jpg",
@@ -1160,13 +1115,25 @@
         // Función para mover el carrusel de destacados
         function scrollFeatured(direction) {
             const slider = document.getElementById('featured-slider');
-            const scrollAmount = 300;
+            const scrollAmount = 320;
             if (direction === 'left') {
                 slider.scrollLeft -= scrollAmount;
             } else {
                 slider.scrollLeft += scrollAmount;
             }
         }
+
+        // Automatización del carrusel de favoritos para que pase solo
+        setInterval(() => {
+            const slider = document.getElementById('featured-slider');
+            if (slider) {
+                if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth) {
+                    slider.scrollTo({ left: 0, behavior: 'smooth' });
+                } else {
+                    slider.scrollBy({ left: 320, behavior: 'smooth' });
+                }
+            }
+        }, 3500);
 
         function toggleCart() {
             const modal = document.getElementById('cart-modal');
