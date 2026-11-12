@@ -66,10 +66,10 @@
     </div>
 </header>
 
-<!-- Hero Section (Estilo Editorial Moderno con Bloque Derecho Ampliado) -->
+<!-- Hero Section -->
 <section id="inicio" class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        <!-- Bloque Izquierdo con fondo DustyCoral/15 -->
+        <!-- Bloque Izquierdo -->
         <div class="lg:col-span-7 bg-dustyCoral/15 rounded-[2.5rem] p-8 sm:p-14 relative overflow-hidden flex flex-col justify-center min-h-[480px] border border-dustyCoral/20">
             <div class="absolute -top-12 -left-12 w-48 h-48 rounded-full bg-softDaisy/50 blur-2xl pointer-events-none"></div>
             <div class="absolute -bottom-12 -right-12 w-64 h-64 rounded-full bg-pinkSand/40 blur-3xl pointer-events-none"></div>
@@ -93,9 +93,9 @@
             </div>
         </div>
 
-        <!-- Bloque Derecho (Tamaño Aumentado para ver la imagen completa) -->
-        <div class="lg:col-span-5 h-[520px] rounded-[2.5rem] overflow-hidden shadow-lg relative bg-white border border-pinkSand/40 flex items-center justify-center p-8">
-            <img id="hero-carousel-img" src="fav-cartera-estrella.jpg" alt="Detalle Destacado KaiRo" class="w-full h-full object-contain transition-all duration-700">
+        <!-- Bloque Derecho (Imagen al ras del contenedor blanco) -->
+        <div class="lg:col-span-5 h-[520px] rounded-[2.5rem] overflow-hidden shadow-lg relative bg-white border border-pinkSand/40 flex items-center justify-center p-0">
+            <img id="hero-carousel-img" src="fav-cartera-estrella.jpg" alt="Detalle Destacado KaiRo" class="w-full h-full object-cover transition-all duration-700">
             <div class="absolute bottom-6 left-6 bg-white/95 backdrop-blur-md px-5 py-3 rounded-2xl shadow-sm border border-stone-100 z-10">
                 <p class="text-xs uppercase tracking-wider text-coconutShell/60 font-bold">Destacado de la Semana</p>
                 <p id="hero-carousel-title" class="text-sm font-serif font-bold text-coconutShell">Accesorios Exclusivos</p>
@@ -104,7 +104,7 @@
     </div>
 </section>
 
-<!-- Sección de Promociones (Sin estrella en el título y con fotos de productos normales) -->
+<!-- Sección de Promociones (Imágenes al ras sin relleno interior) -->
 <section id="promociones" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between mb-8">
         <div>
@@ -117,8 +117,8 @@
         <!-- Promo 1 -->
         <div class="bg-white rounded-3xl p-4 shadow-sm border border-stone-100 flex flex-col justify-between group overflow-hidden relative">
             <span class="absolute top-6 right-6 bg-dustyCoral text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">-20%</span>
-            <div class="h-[280px] bg-stone-50/70 rounded-2xl overflow-hidden flex items-center justify-center relative mb-4 p-4">
-                <img src="cartera-blanca-toda.jpg" alt="Cartera Blanca Elegante" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
+            <div class="h-[280px] rounded-2xl overflow-hidden flex items-center justify-center relative mb-4 p-0">
+                <img src="cartera-blanca-toda.jpg" alt="Cartera Blanca Elegante" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 rounded-2xl">
             </div>
             <div>
                 <h3 class="font-bold text-coconutShell text-lg mb-1">Cartera Blanca Elegante</h3>
@@ -135,8 +135,8 @@
         <!-- Promo 2 -->
         <div class="bg-white rounded-3xl p-4 shadow-sm border border-stone-100 flex flex-col justify-between group overflow-hidden relative">
             <span class="absolute top-6 right-6 bg-dustyCoral text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">-25%</span>
-            <div class="h-[280px] bg-stone-50/70 rounded-2xl overflow-hidden flex items-center justify-center relative mb-4 p-4">
-                <img src="zarcillo-rojo.jpg" alt="Argollas Doradas con Rojo" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
+            <div class="h-[280px] rounded-2xl overflow-hidden flex items-center justify-center relative mb-4 p-0">
+                <img src="zarcillo-rojo.jpg" alt="Argollas Doradas con Rojo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 rounded-2xl">
             </div>
             <div>
                 <h3 class="font-bold text-coconutShell text-lg mb-1">Argollas Doradas con Rojo</h3>
@@ -153,8 +153,8 @@
         <!-- Promo 3 -->
         <div class="bg-white rounded-3xl p-4 shadow-sm border border-stone-100 flex flex-col justify-between group overflow-hidden relative">
             <span class="absolute top-6 right-6 bg-dustyCoral text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">-30%</span>
-            <div class="h-[280px] bg-stone-50/70 rounded-2xl overflow-hidden flex items-center justify-center relative mb-4 p-4">
-                <img src="lentes-amarillos.jpg" alt="Lentes Estilo Vintage Amarillos" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
+            <div class="h-[280px] rounded-2xl overflow-hidden flex items-center justify-center relative mb-4 p-0">
+                <img src="lentes-amarillos.jpg" alt="Lentes Estilo Vintage Amarillos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 rounded-2xl">
             </div>
             <div>
                 <h3 class="font-bold text-coconutShell text-lg mb-1">Lentes Estilo Vintage Amarillos</h3>
@@ -171,8 +171,8 @@
         <!-- Promo 4 -->
         <div class="bg-white rounded-3xl p-4 shadow-sm border border-stone-100 flex flex-col justify-between group overflow-hidden relative">
             <span class="absolute top-6 right-6 bg-dustyCoral text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">-20%</span>
-            <div class="h-[280px] bg-stone-50/70 rounded-2xl overflow-hidden flex items-center justify-center relative mb-4 p-4">
-                <img src="monedero-negro.jpg" alt="Monedero Negro con Puntos Blancos" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
+            <div class="h-[280px] rounded-2xl overflow-hidden flex items-center justify-center relative mb-4 p-0">
+                <img src="monedero-negro.jpg" alt="Monedero Negro con Puntos Blancos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 rounded-2xl">
             </div>
             <div>
                 <h3 class="font-bold text-coconutShell text-lg mb-1">Monedero Negro con Puntos</h3>
@@ -768,7 +768,7 @@
                 </div>
                 <div class="flex items-center justify-between pt-4 border-t border-stone-100">
                     <span class="text-lg font-bold text-coconutShell">8,00 €</span>
-                    <button onclick="addToCart('Set de Dos Collares con Estrella', 8.00)" class="bg-dustyCoral text-coconutShell px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors shadow-sm">
+                    <button onclick="addToCart('Set de Dos Collares with Estrella', 8.00)" class="bg-dustyCoral text-coconutShell px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors shadow-sm">
                         Agregar al carrito
                     </button>
                 </div>
@@ -1087,7 +1087,7 @@
 <script>
     let cart = [];
 
-    // Carrusel Automático del Hero (cada 4 segundos con las 4 imágenes de Favoritos)
+    // Carrusel Automático del Hero
     const heroCarouselImages = [
         { src: "fav-cartera-estrella.jpg", title: "Cartera Estrellas Trendy" },
         { src: "fav-anillos.jpg", title: "Set de Anillos Brillantes" },
