@@ -66,11 +66,11 @@
     </div>
 </header>
 
-<!-- Hero Section (Estilo Editorial Moderno con Carrusel Automático de 4s) -->
+<!-- Hero Section (Estilo Editorial Moderno con Bloque Derecho Ampliado) -->
 <section id="inicio" class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         <!-- Bloque Izquierdo con fondo DustyCoral/15 -->
-        <div class="lg:col-span-7 bg-dustyCoral/15 rounded-[2.5rem] p-8 sm:p-12 relative overflow-hidden flex flex-col justify-center min-h-[420px] border border-dustyCoral/20">
+        <div class="lg:col-span-7 bg-dustyCoral/15 rounded-[2.5rem] p-8 sm:p-14 relative overflow-hidden flex flex-col justify-center min-h-[480px] border border-dustyCoral/20">
             <div class="absolute -top-12 -left-12 w-48 h-48 rounded-full bg-softDaisy/50 blur-2xl pointer-events-none"></div>
             <div class="absolute -bottom-12 -right-12 w-64 h-64 rounded-full bg-pinkSand/40 blur-3xl pointer-events-none"></div>
 
@@ -93,22 +93,22 @@
             </div>
         </div>
 
-        <!-- Bloque Derecho (Carrusel Automático de 4s con las 4 imágenes de Favoritos) -->
-        <div class="lg:col-span-5 h-[420px] rounded-[2.5rem] overflow-hidden shadow-md relative bg-pinkSand/20 border border-pinkSand/40 flex items-center justify-center p-6">
-            <img id="hero-carousel-img" src="fav-cartera-estrella.jpg" alt="Favorito Destacado KaiRo" class="w-full h-full object-cover rounded-2xl transition-all duration-700">
-            <div class="absolute bottom-6 left-6 bg-white/90 backdrop-blur-md px-5 py-2.5 rounded-2xl shadow-sm border border-stone-100 z-10">
-                <p class="text-xs uppercase tracking-wider text-coconutShell/60 font-bold">Favoritos de la Semana</p>
+        <!-- Bloque Derecho (Tamaño Aumentado para ver la imagen completa) -->
+        <div class="lg:col-span-5 h-[520px] rounded-[2.5rem] overflow-hidden shadow-lg relative bg-white border border-pinkSand/40 flex items-center justify-center p-8">
+            <img id="hero-carousel-img" src="fav-cartera-estrella.jpg" alt="Detalle Destacado KaiRo" class="w-full h-full object-contain transition-all duration-700">
+            <div class="absolute bottom-6 left-6 bg-white/95 backdrop-blur-md px-5 py-3 rounded-2xl shadow-sm border border-stone-100 z-10">
+                <p class="text-xs uppercase tracking-wider text-coconutShell/60 font-bold">Destacado de la Semana</p>
                 <p id="hero-carousel-title" class="text-sm font-serif font-bold text-coconutShell">Accesorios Exclusivos</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Sección de Promociones (Antiguos Favoritos con Precios Tachados y Ofertas) -->
+<!-- Sección de Promociones (Sin estrella en el título y con fotos de productos normales) -->
 <section id="promociones" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between mb-8">
         <div>
-            <h2 class="text-3xl font-bold font-serif text-coconutShell">✦ Promociones Especiales</h2>
+            <h2 class="text-3xl font-bold font-serif text-coconutShell">Promociones Especiales</h2>
             <p class="text-coconutShell/70 text-sm mt-1">¡Aprovecha nuestros descuentos exclusivos por tiempo limitado!</p>
         </div>
     </div>
@@ -117,17 +117,17 @@
         <!-- Promo 1 -->
         <div class="bg-white rounded-3xl p-4 shadow-sm border border-stone-100 flex flex-col justify-between group overflow-hidden relative">
             <span class="absolute top-6 right-6 bg-dustyCoral text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">-20%</span>
-            <div class="h-[280px] bg-stone-50 rounded-2xl overflow-hidden flex items-center justify-center relative mb-4">
-                <img src="fav-cartera-estrella.jpg" alt="Promo Cartera Estrellas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="h-[280px] bg-stone-50/70 rounded-2xl overflow-hidden flex items-center justify-center relative mb-4 p-4">
+                <img src="cartera-blanca-toda.jpg" alt="Cartera Blanca Elegante" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
             </div>
             <div>
-                <h3 class="font-bold text-coconutShell text-lg mb-1">Cartera Estrellas Trendy</h3>
+                <h3 class="font-bold text-coconutShell text-lg mb-1">Cartera Blanca Elegante</h3>
                 <div class="flex items-center gap-3 mt-2">
-                    <span class="text-stone-400 line-through text-sm">30,00 €</span>
-                    <span class="text-xl font-bold text-dustyCoral">24,00 €</span>
+                    <span class="text-stone-400 line-through text-sm">25,00 €</span>
+                    <span class="text-xl font-bold text-dustyCoral">20,00 €</span>
                 </div>
             </div>
-            <button onclick="addToCart('Cartera Estrellas Trendy (Promo)', 24.00)" class="mt-4 w-full bg-coconutShell text-softDaisy py-2.5 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors shadow-sm">
+            <button onclick="addToCart('Cartera Blanca Elegante (Promo)', 20.00)" class="mt-4 w-full bg-coconutShell text-softDaisy py-2.5 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors shadow-sm">
                 Agregar al carrito
             </button>
         </div>
@@ -135,17 +135,17 @@
         <!-- Promo 2 -->
         <div class="bg-white rounded-3xl p-4 shadow-sm border border-stone-100 flex flex-col justify-between group overflow-hidden relative">
             <span class="absolute top-6 right-6 bg-dustyCoral text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">-25%</span>
-            <div class="h-[280px] bg-stone-50 rounded-2xl overflow-hidden flex items-center justify-center relative mb-4">
-                <img src="fav-anillos.jpg" alt="Promo Anillos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="h-[280px] bg-stone-50/70 rounded-2xl overflow-hidden flex items-center justify-center relative mb-4 p-4">
+                <img src="zarcillo-rojo.jpg" alt="Argollas Doradas con Rojo" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
             </div>
             <div>
-                <h3 class="font-bold text-coconutShell text-lg mb-1">Set de Anillos Brillantes</h3>
+                <h3 class="font-bold text-coconutShell text-lg mb-1">Argollas Doradas con Rojo</h3>
                 <div class="flex items-center gap-3 mt-2">
-                    <span class="text-stone-400 line-through text-sm">8,00 €</span>
-                    <span class="text-xl font-bold text-dustyCoral">6,00 €</span>
+                    <span class="text-stone-400 line-through text-sm">6,65 €</span>
+                    <span class="text-xl font-bold text-dustyCoral">5,00 €</span>
                 </div>
             </div>
-            <button onclick="addToCart('Set de Anillos Brillantes (Promo)', 6.00)" class="mt-4 w-full bg-coconutShell text-softDaisy py-2.5 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors shadow-sm">
+            <button onclick="addToCart('Argollas Doradas con Rojo (Promo)', 5.00)" class="mt-4 w-full bg-coconutShell text-softDaisy py-2.5 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors shadow-sm">
                 Agregar al carrito
             </button>
         </div>
@@ -153,35 +153,35 @@
         <!-- Promo 3 -->
         <div class="bg-white rounded-3xl p-4 shadow-sm border border-stone-100 flex flex-col justify-between group overflow-hidden relative">
             <span class="absolute top-6 right-6 bg-dustyCoral text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">-30%</span>
-            <div class="h-[280px] bg-stone-50 rounded-2xl overflow-hidden flex items-center justify-center relative mb-4">
-                <img src="fav-pulseras.jpg" alt="Promo Pulseras" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="h-[280px] bg-stone-50/70 rounded-2xl overflow-hidden flex items-center justify-center relative mb-4 p-4">
+                <img src="lentes-amarillos.jpg" alt="Lentes Estilo Vintage Amarillos" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
             </div>
             <div>
-                <h3 class="font-bold text-coconutShell text-lg mb-1">Set de Pulseras Doradas</h3>
+                <h3 class="font-bold text-coconutShell text-lg mb-1">Lentes Estilo Vintage Amarillos</h3>
                 <div class="flex items-center gap-3 mt-2">
-                    <span class="text-stone-400 line-through text-sm">15,00 €</span>
-                    <span class="text-xl font-bold text-dustyCoral">10,50 €</span>
+                    <span class="text-stone-400 line-through text-sm">11,50 €</span>
+                    <span class="text-xl font-bold text-dustyCoral">8,00 €</span>
                 </div>
             </div>
-            <button onclick="addToCart('Set de Pulseras Doradas (Promo)', 10.50)" class="mt-4 w-full bg-coconutShell text-softDaisy py-2.5 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors shadow-sm">
+            <button onclick="addToCart('Lentes Estilo Vintage Amarillos (Promo)', 8.00)" class="mt-4 w-full bg-coconutShell text-softDaisy py-2.5 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors shadow-sm">
                 Agregar al carrito
             </button>
         </div>
 
         <!-- Promo 4 -->
         <div class="bg-white rounded-3xl p-4 shadow-sm border border-stone-100 flex flex-col justify-between group overflow-hidden relative">
-            <span class="absolute top-6 right-6 bg-dustyCoral text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">-15%</span>
-            <div class="h-[280px] bg-stone-50 rounded-2xl overflow-hidden flex items-center justify-center relative mb-4">
-                <img src="fav-cartera.jpg" alt="Promo Cartera Charol" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-6 right-6 bg-dustyCoral text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">-20%</span>
+            <div class="h-[280px] bg-stone-50/70 rounded-2xl overflow-hidden flex items-center justify-center relative mb-4 p-4">
+                <img src="monedero-negro.jpg" alt="Monedero Negro con Puntos Blancos" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
             </div>
             <div>
-                <h3 class="font-bold text-coconutShell text-lg mb-1">Cartera Charol Elegante</h3>
+                <h3 class="font-bold text-coconutShell text-lg mb-1">Monedero Negro con Puntos</h3>
                 <div class="flex items-center gap-3 mt-2">
-                    <span class="text-stone-400 line-through text-sm">28,00 €</span>
-                    <span class="text-xl font-bold text-dustyCoral">23,80 €</span>
+                    <span class="text-stone-400 line-through text-sm">10,00 €</span>
+                    <span class="text-xl font-bold text-dustyCoral">8,00 €</span>
                 </div>
             </div>
-            <button onclick="addToCart('Cartera Charol Elegante (Promo)', 23.80)" class="mt-4 w-full bg-coconutShell text-softDaisy py-2.5 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors shadow-sm">
+            <button onclick="addToCart('Monedero Negro con Puntos (Promo)', 8.00)" class="mt-4 w-full bg-coconutShell text-softDaisy py-2.5 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors shadow-sm">
                 Agregar al carrito
             </button>
         </div>
@@ -428,7 +428,7 @@
             </div>
         </div>
 
-        <!-- EARCuffs (Galería deslizante - 3,00 €) -->
+        <!-- EARCuffs -->
         <div class="product-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-stone-100 flex flex-col group p-2" data-category="zarcillos">
             <div class="relative h-72 overflow-hidden bg-stone-50/70 rounded-[1.5rem] flex items-center justify-center p-2">
                 <img id="earcuff-img" src="earcuff-1.jpg" alt="Earcuffs Variedad" class="w-full h-full object-contain scale-115 transition-all duration-300">
@@ -768,7 +768,7 @@
                 </div>
                 <div class="flex items-center justify-between pt-4 border-t border-stone-100">
                     <span class="text-lg font-bold text-coconutShell">8,00 €</span>
-                    <button onclick="addToCart('Set de Dos Collares with Estrella', 8.00)" class="bg-dustyCoral text-coconutShell px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors shadow-sm">
+                    <button onclick="addToCart('Set de Dos Collares con Estrella', 8.00)" class="bg-dustyCoral text-coconutShell px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors shadow-sm">
                         Agregar al carrito
                     </button>
                 </div>
