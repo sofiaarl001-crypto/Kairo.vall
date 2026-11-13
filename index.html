@@ -66,7 +66,7 @@
     </div>
 </header>
 
-<!-- Hero Section -->
+<!-- Hero Section (Sin etiqueta flotante de favoritos) -->
 <section id="inicio" class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         <!-- Bloque Izquierdo -->
@@ -93,18 +93,14 @@
             </div>
         </div>
 
-        <!-- Bloque Derecho (Imagen al ras del contenedor blanco) -->
+        <!-- Bloque Derecho (Imagen al ras sin recuadro de texto flotante) -->
         <div class="lg:col-span-5 h-[520px] rounded-[2.5rem] overflow-hidden shadow-lg relative bg-white border border-pinkSand/40 flex items-center justify-center p-0">
             <img id="hero-carousel-img" src="fav-cartera-estrella.jpg" alt="Detalle Destacado KaiRo" class="w-full h-full object-cover transition-all duration-700">
-            <div class="absolute bottom-6 left-6 bg-white/95 backdrop-blur-md px-5 py-3 rounded-2xl shadow-sm border border-stone-100 z-10">
-                <p class="text-xs uppercase tracking-wider text-coconutShell/60 font-bold">Destacado de la Semana</p>
-                <p id="hero-carousel-title" class="text-sm font-serif font-bold text-coconutShell">Accesorios Exclusivos</p>
-            </div>
         </div>
     </div>
 </section>
 
-<!-- Sección de Promociones (Imágenes al ras sin relleno interior) -->
+<!-- Sección de Promociones -->
 <section id="promociones" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between mb-8">
         <div>
@@ -117,8 +113,8 @@
         <!-- Promo 1 -->
         <div class="bg-white rounded-3xl p-4 shadow-sm border border-stone-100 flex flex-col justify-between group overflow-hidden relative">
             <span class="absolute top-6 right-6 bg-dustyCoral text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">-20%</span>
-            <div class="h-[280px] rounded-2xl overflow-hidden flex items-center justify-center relative mb-4 p-0">
-                <img src="cartera-blanca-toda.jpg" alt="Cartera Blanca Elegante" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 rounded-2xl">
+            <div class="h-[280px] rounded-2xl overflow-hidden flex items-center justify-center relative mb-4 p-0 bg-white">
+                <img src="cartera-blanca-toda.jpg" alt="Cartera Blanca Elegante" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500 rounded-2xl p-2">
             </div>
             <div>
                 <h3 class="font-bold text-coconutShell text-lg mb-1">Cartera Blanca Elegante</h3>
@@ -135,8 +131,8 @@
         <!-- Promo 2 -->
         <div class="bg-white rounded-3xl p-4 shadow-sm border border-stone-100 flex flex-col justify-between group overflow-hidden relative">
             <span class="absolute top-6 right-6 bg-dustyCoral text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">-25%</span>
-            <div class="h-[280px] rounded-2xl overflow-hidden flex items-center justify-center relative mb-4 p-0">
-                <img src="zarcillo-rojo.jpg" alt="Argollas Doradas con Rojo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 rounded-2xl">
+            <div class="h-[280px] rounded-2xl overflow-hidden flex items-center justify-center relative mb-4 p-0 bg-white">
+                <img src="zarcillo-rojo.jpg" alt="Argollas Doradas con Rojo" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500 rounded-2xl p-2">
             </div>
             <div>
                 <h3 class="font-bold text-coconutShell text-lg mb-1">Argollas Doradas con Rojo</h3>
@@ -153,8 +149,8 @@
         <!-- Promo 3 -->
         <div class="bg-white rounded-3xl p-4 shadow-sm border border-stone-100 flex flex-col justify-between group overflow-hidden relative">
             <span class="absolute top-6 right-6 bg-dustyCoral text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">-30%</span>
-            <div class="h-[280px] rounded-2xl overflow-hidden flex items-center justify-center relative mb-4 p-0">
-                <img src="lentes-amarillos.jpg" alt="Lentes Estilo Vintage Amarillos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 rounded-2xl">
+            <div class="h-[280px] rounded-2xl overflow-hidden flex items-center justify-center relative mb-4 p-0 bg-white">
+                <img src="lentes-amarillos.jpg" alt="Lentes Estilo Vintage Amarillos" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500 rounded-2xl p-2">
             </div>
             <div>
                 <h3 class="font-bold text-coconutShell text-lg mb-1">Lentes Estilo Vintage Amarillos</h3>
@@ -171,8 +167,8 @@
         <!-- Promo 4 -->
         <div class="bg-white rounded-3xl p-4 shadow-sm border border-stone-100 flex flex-col justify-between group overflow-hidden relative">
             <span class="absolute top-6 right-6 bg-dustyCoral text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">-20%</span>
-            <div class="h-[280px] rounded-2xl overflow-hidden flex items-center justify-center relative mb-4 p-0">
-                <img src="monedero-negro.jpg" alt="Monedero Negro con Puntos Blancos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 rounded-2xl">
+            <div class="h-[280px] rounded-2xl overflow-hidden flex items-center justify-center relative mb-4 p-0 bg-white">
+                <img src="monedero-negro.jpg" alt="Monedero Negro con Puntos Blancos" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500 rounded-2xl p-2">
             </div>
             <div>
                 <h3 class="font-bold text-coconutShell text-lg mb-1">Monedero Negro con Puntos</h3>
@@ -214,7 +210,7 @@
         
         <!-- ANILLOS -->
         <div class="product-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-stone-100 flex flex-col group p-2" data-category="anillos">
-            <div class="relative h-72 overflow-hidden bg-stone-50/70 rounded-[1.5rem] flex items-center justify-center p-2">
+            <div class="relative h-72 overflow-hidden bg-white rounded-[1.5rem] flex items-center justify-center p-2">
                 <img id="anillo-img" src="anillo-1_3.jpg" alt="Anillos Variedad" class="w-full h-full object-contain scale-115 transition-all duration-300">
                 <span class="absolute top-3 left-3 bg-coconutShell text-softDaisy text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">Anillos</span>
                 <button onclick="prevAnillo()" class="absolute left-2 bg-white/80 hover:bg-white text-coconutShell w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs transition-colors shadow">❮</button>
@@ -236,7 +232,7 @@
 
         <!-- PULSERAS -->
         <div class="product-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-stone-100 flex flex-col group p-2" data-category="pulseras">
-            <div class="relative h-72 overflow-hidden bg-stone-50/70 rounded-[1.5rem] flex items-center justify-center p-2">
+            <div class="relative h-72 overflow-hidden bg-white rounded-[1.5rem] flex items-center justify-center p-2">
                 <img id="pulsera-img" src="set-1.jpg" alt="Sets de Pulseras" class="w-full h-full object-contain scale-115 transition-all duration-300">
                 <span class="absolute top-3 left-3 bg-softDaisy text-coconutShell text-xs font-bold px-3 py-1 rounded-full border border-coconutShell/20 shadow-sm z-10">Pulseras</span>
                 <button onclick="prevPulsera()" class="absolute left-2 bg-white/80 hover:bg-white text-coconutShell w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs transition-colors shadow">❮</button>
@@ -258,7 +254,7 @@
 
         <!-- ZARCILLOS -->
         <div class="product-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-stone-100 flex flex-col group p-2" data-category="zarcillos">
-            <div class="relative h-72 overflow-hidden bg-stone-50/70 rounded-[1.5rem] flex items-center justify-center p-2">
+            <div class="relative h-72 overflow-hidden bg-white rounded-[1.5rem] flex items-center justify-center p-2">
                 <img src="zarcillo-rojo.jpg" alt="Zarcillos Dorados con Rojo" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
                 <span class="absolute top-3 left-3 bg-dustyCoral text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">Zarcillos</span>
             </div>
@@ -277,7 +273,7 @@
         </div>
 
         <div class="product-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-stone-100 flex flex-col group p-2" data-category="zarcillos">
-            <div class="relative h-72 overflow-hidden bg-stone-50/70 rounded-[1.5rem] flex items-center justify-center p-2">
+            <div class="relative h-72 overflow-hidden bg-white rounded-[1.5rem] flex items-center justify-center p-2">
                 <img src="zarcillo-pepas-ovalada.jpg" alt="Zarcillos Grandes Ovalados con Pepas" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
                 <span class="absolute top-3 left-3 bg-coconutShell text-softDaisy text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">Zarcillos</span>
             </div>
@@ -296,7 +292,7 @@
         </div>
 
         <div class="product-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-stone-100 flex flex-col group p-2" data-category="zarcillos">
-            <div class="relative h-72 overflow-hidden bg-stone-50/70 rounded-[1.5rem] flex items-center justify-center p-2">
+            <div class="relative h-72 overflow-hidden bg-white rounded-[1.5rem] flex items-center justify-center p-2">
                 <img src="zarcillo-carey.jpg" alt="Aretes de Colores en Acrílico" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
                 <span class="absolute top-3 left-3 bg-pinkSand text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">Zarcillos</span>
             </div>
@@ -315,7 +311,7 @@
         </div>
 
         <div class="product-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-stone-100 flex flex-col group p-2" data-category="zarcillos">
-            <div class="relative h-72 overflow-hidden bg-stone-50/70 rounded-[1.5rem] flex items-center justify-center p-2">
+            <div class="relative h-72 overflow-hidden bg-white rounded-[1.5rem] flex items-center justify-center p-2">
                 <img src="zarcillo-plateado -tranca.jpg" alt="Aretes Plateados Argollas" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
                 <span class="absolute top-3 left-3 bg-softDaisy text-coconutShell text-xs font-bold px-3 py-1 rounded-full border border-coconutShell/20 shadow-sm z-10">Zarcillos</span>
             </div>
@@ -334,7 +330,7 @@
         </div>
 
         <div class="product-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-stone-100 flex flex-col group p-2" data-category="zarcillos">
-            <div class="relative h-72 overflow-hidden bg-stone-50/70 rounded-[1.5rem] flex items-center justify-center p-2">
+            <div class="relative h-72 overflow-hidden bg-white rounded-[1.5rem] flex items-center justify-center p-2">
                 <img src="zarcillo-azul-largo.jpg" alt="Colgantes Azul" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
                 <span class="absolute top-3 left-3 bg-dustyCoral text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">Zarcillos</span>
             </div>
@@ -353,7 +349,7 @@
         </div>
 
         <div class="product-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-stone-100 flex flex-col group p-2" data-category="zarcillos">
-            <div class="relative h-72 overflow-hidden bg-stone-50/70 rounded-[1.5rem] flex items-center justify-center p-2">
+            <div class="relative h-72 overflow-hidden bg-white rounded-[1.5rem] flex items-center justify-center p-2">
                 <img src="zarcillo-marron-largo.jpg" alt="Colgantes Marrón" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
                 <span class="absolute top-3 left-3 bg-coconutShell text-softDaisy text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">Zarcillos</span>
             </div>
@@ -372,7 +368,7 @@
         </div>
 
         <div class="product-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-stone-100 flex flex-col group p-2" data-category="zarcillos">
-            <div class="relative h-72 overflow-hidden bg-stone-50/70 rounded-[1.5rem] flex items-center justify-center p-2">
+            <div class="relative h-72 overflow-hidden bg-white rounded-[1.5rem] flex items-center justify-center p-2">
                 <img src="zarcillo-dorado.jpg" alt="Zarcillos Dorados Lisos" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
                 <span class="absolute top-3 left-3 bg-softDaisy text-coconutShell text-xs font-bold px-3 py-1 rounded-full border border-coconutShell/20 shadow-sm z-10">Zarcillos</span>
             </div>
@@ -391,7 +387,7 @@
         </div>
 
         <div class="product-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-stone-100 flex flex-col group p-2" data-category="zarcillos">
-            <div class="relative h-72 overflow-hidden bg-stone-50/70 rounded-[1.5rem] flex items-center justify-center p-2">
+            <div class="relative h-72 overflow-hidden bg-white rounded-[1.5rem] flex items-center justify-center p-2">
                 <img src="zarcillo-doradp-pepas.jpg" alt="Zarcillos Dorados con Pepas de Colores" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
                 <span class="absolute top-3 left-3 bg-pinkSand text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">Zarcillos</span>
             </div>
@@ -410,7 +406,7 @@
         </div>
 
         <div class="product-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-stone-100 flex flex-col group p-2" data-category="zarcillos">
-            <div class="relative h-72 overflow-hidden bg-stone-50/70 rounded-[1.5rem] flex items-center justify-center p-2">
+            <div class="relative h-72 overflow-hidden bg-white rounded-[1.5rem] flex items-center justify-center p-2">
                 <img src="zarcillo-plateado pepas.jpg" alt="Zarcillos Plateados con Pepas" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
                 <span class="absolute top-3 left-3 bg-dustyCoral text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">Zarcillos</span>
             </div>
@@ -430,7 +426,7 @@
 
         <!-- EARCuffs -->
         <div class="product-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-stone-100 flex flex-col group p-2" data-category="zarcillos">
-            <div class="relative h-72 overflow-hidden bg-stone-50/70 rounded-[1.5rem] flex items-center justify-center p-2">
+            <div class="relative h-72 overflow-hidden bg-white rounded-[1.5rem] flex items-center justify-center p-2">
                 <img id="earcuff-img" src="earcuff-1.jpg" alt="Earcuffs Variedad" class="w-full h-full object-contain scale-115 transition-all duration-300">
                 <span class="absolute top-3 left-3 bg-coconutShell text-softDaisy text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">Zarcillos</span>
                 <button onclick="prevEarcuff()" class="absolute left-2 bg-white/80 hover:bg-white text-coconutShell w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs transition-colors shadow">❮</button>
@@ -452,7 +448,7 @@
 
         <!-- CARTERAS -->
         <div class="product-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-stone-100 flex flex-col group p-2" data-category="carteras">
-            <div class="relative h-72 overflow-hidden bg-stone-50/70 rounded-[1.5rem] flex items-center justify-center p-2">
+            <div class="relative h-72 overflow-hidden bg-white rounded-[1.5rem] flex items-center justify-center p-2">
                 <img src="cartera-blanca-toda.jpg" alt="Cartera Blanca Toda" class="w-full h-full object-contain scale-110 group-hover:scale-120 transition-transform duration-500">
                 <span class="absolute top-3 left-3 bg-coconutShell text-softDaisy text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">Carteras</span>
             </div>
@@ -471,7 +467,7 @@
         </div>
 
         <div class="product-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-stone-100 flex flex-col group p-2" data-category="carteras">
-            <div class="relative h-72 overflow-hidden bg-stone-50/70 rounded-[1.5rem] flex items-center justify-center p-2">
+            <div class="relative h-72 overflow-hidden bg-white rounded-[1.5rem] flex items-center justify-center p-2">
                 <img src="cartera-marron-gamusa.jpg" alt="Cartera Marrón" class="w-full h-full object-contain scale-110 group-hover:scale-120 transition-transform duration-500">
                 <span class="absolute top-3 left-3 bg-coconutShell text-softDaisy text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">Carteras</span>
             </div>
@@ -490,7 +486,7 @@
         </div>
 
         <div class="product-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-stone-100 flex flex-col group p-2" data-category="carteras">
-            <div class="relative h-72 overflow-hidden bg-stone-50/70 rounded-[1.5rem] flex items-center justify-center p-2">
+            <div class="relative h-72 overflow-hidden bg-white rounded-[1.5rem] flex items-center justify-center p-2">
                 <img src="cartera-verde.jpg" alt="Cartera Verde" class="w-full h-full object-contain scale-110 group-hover:scale-120 transition-transform duration-500">
                 <span class="absolute top-3 left-3 bg-coconutShell text-softDaisy text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">Carteras</span>
             </div>
@@ -509,7 +505,7 @@
         </div>
 
         <div class="product-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-stone-100 flex flex-col group p-2" data-category="carteras">
-            <div class="relative h-72 overflow-hidden bg-stone-50/70 rounded-[1.5rem] flex items-center justify-center p-2">
+            <div class="relative h-72 overflow-hidden bg-white rounded-[1.5rem] flex items-center justify-center p-2">
                 <img src="cartera-azul-jean.jpg" alt="Cartera Azul de Jean" class="w-full h-full object-contain scale-110 group-hover:scale-120 transition-transform duration-500">
                 <span class="absolute top-3 left-3 bg-coconutShell text-softDaisy text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">Carteras</span>
             </div>
@@ -528,7 +524,7 @@
         </div>
 
         <div class="product-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-stone-100 flex flex-col group p-2" data-category="carteras">
-            <div class="relative h-72 overflow-hidden bg-stone-50/70 rounded-[1.5rem] flex items-center justify-center p-2">
+            <div class="relative h-72 overflow-hidden bg-white rounded-[1.5rem] flex items-center justify-center p-2">
                 <img src="cartera-amarilla.jpg" alt="Cartera Amarilla Mantequilla" class="w-full h-full object-contain scale-110 group-hover:scale-120 transition-transform duration-500">
                 <span class="absolute top-3 left-3 bg-coconutShell text-softDaisy text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">Carteras</span>
             </div>
@@ -547,7 +543,7 @@
         </div>
 
         <div class="product-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-stone-100 flex flex-col group p-2" data-category="carteras">
-            <div class="relative h-72 overflow-hidden bg-stone-50/70 rounded-[1.5rem] flex items-center justify-center p-2">
+            <div class="relative h-72 overflow-hidden bg-white rounded-[1.5rem] flex items-center justify-center p-2">
                 <img src="cartera-roja-animal.jpg" alt="Cartera Roja Animal Print" class="w-full h-full object-contain scale-110 group-hover:scale-120 transition-transform duration-500">
                 <span class="absolute top-3 left-3 bg-coconutShell text-softDaisy text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">Carteras</span>
             </div>
@@ -566,7 +562,7 @@
         </div>
 
         <div class="product-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-stone-100 flex flex-col group p-2" data-category="carteras">
-            <div class="relative h-72 overflow-hidden bg-stone-50/70 rounded-[1.5rem] flex items-center justify-center p-2">
+            <div class="relative h-72 overflow-hidden bg-white rounded-[1.5rem] flex items-center justify-center p-2">
                 <img src="cartera-roja-plateada.jpg" alt="Cartera Roja con Plateado" class="w-full h-full object-contain scale-110 group-hover:scale-120 transition-transform duration-500">
                 <span class="absolute top-3 left-3 bg-coconutShell text-softDaisy text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">Carteras</span>
             </div>
@@ -577,7 +573,7 @@
                 </div>
                 <div class="flex items-center justify-between pt-4 border-t border-stone-100">
                     <span class="text-lg font-bold text-coconutShell">30,00 €</span>
-                    <button onclick="addToCart('Cartera Roja con Plateado', 30.00)" class="bg-coconutShell text-softDaisy px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors shadow-sm">
+                    <button onclick="addToCart('Cartera Roja with Plateado', 30.00)" class="bg-coconutShell text-softDaisy px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors shadow-sm">
                         Agregar al carrito
                     </button>
                 </div>
@@ -585,7 +581,7 @@
         </div>
 
         <div class="product-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-stone-100 flex flex-col group p-2" data-category="carteras">
-            <div class="relative h-72 overflow-hidden bg-stone-50/70 rounded-[1.5rem] flex items-center justify-center p-2">
+            <div class="relative h-72 overflow-hidden bg-white rounded-[1.5rem] flex items-center justify-center p-2">
                 <img src="totebag.jpg" alt="Tote Bag Blanco con Puntos" class="w-full h-full object-contain scale-110 group-hover:scale-120 transition-transform duration-500">
                 <span class="absolute top-3 left-3 bg-softDaisy text-coconutShell text-xs font-bold px-3 py-1 rounded-full border border-coconutShell/20 shadow-sm z-10">Carteras</span>
             </div>
@@ -604,7 +600,7 @@
         </div>
 
         <div class="product-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-stone-100 flex flex-col group p-2" data-category="carteras">
-            <div class="relative h-72 overflow-hidden bg-stone-50/70 rounded-[1.5rem] flex items-center justify-center p-2">
+            <div class="relative h-72 overflow-hidden bg-white rounded-[1.5rem] flex items-center justify-center p-2">
                 <img src="cartera-negra-puntos.jpg" alt="Cartera Negra Puntos Blancos" class="w-full h-full object-contain scale-110 group-hover:scale-120 transition-transform duration-500">
                 <span class="absolute top-3 left-3 bg-coconutShell text-softDaisy text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">Carteras</span>
             </div>
@@ -623,7 +619,7 @@
         </div>
 
         <div class="product-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-stone-100 flex flex-col group p-2" data-category="carteras">
-            <div class="relative h-72 overflow-hidden bg-stone-50/70 rounded-[1.5rem] flex items-center justify-center p-2">
+            <div class="relative h-72 overflow-hidden bg-white rounded-[1.5rem] flex items-center justify-center p-2">
                 <img src="cartera-blanca-puntos.jpg" alt="Cartera Blanco con Puntos Negros" class="w-full h-full object-contain scale-110 group-hover:scale-120 transition-transform duration-500">
                 <span class="absolute top-3 left-3 bg-softDaisy text-coconutShell text-xs font-bold px-3 py-1 rounded-full border border-coconutShell/20 shadow-sm z-10">Carteras</span>
             </div>
@@ -642,7 +638,7 @@
         </div>
 
         <div class="product-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-stone-100 flex flex-col group p-2" data-category="carteras">
-            <div class="relative h-72 overflow-hidden bg-stone-50/70 rounded-[1.5rem] flex items-center justify-center p-2">
+            <div class="relative h-72 overflow-hidden bg-white rounded-[1.5rem] flex items-center justify-center p-2">
                 <img src="cartera-negra-toda.jpg" alt="Cartera Negra Toda" class="w-full h-full object-contain scale-110 group-hover:scale-120 transition-transform duration-500">
                 <span class="absolute top-3 left-3 bg-coconutShell text-softDaisy text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">Carteras</span>
             </div>
@@ -662,7 +658,7 @@
 
         <!-- COLLARES -->
         <div class="product-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-stone-100 flex flex-col group p-2" data-category="collares">
-            <div class="relative h-72 overflow-hidden bg-stone-50/70 rounded-[1.5rem] flex items-center justify-center p-2">
+            <div class="relative h-72 overflow-hidden bg-white rounded-[1.5rem] flex items-center justify-center p-2">
                 <img src="collar-dijes-azul.jpg" alt="Collar de Dijes Azul" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
                 <span class="absolute top-3 left-3 bg-dustyCoral text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">Collares</span>
             </div>
@@ -681,7 +677,7 @@
         </div>
 
         <div class="product-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-stone-100 flex flex-col group p-2" data-category="collares">
-            <div class="relative h-72 overflow-hidden bg-stone-50/70 rounded-[1.5rem] flex items-center justify-center p-2">
+            <div class="relative h-72 overflow-hidden bg-white rounded-[1.5rem] flex items-center justify-center p-2">
                 <img src="collar-dijes-rosa.jpg" alt="Collar de Dijes Rosado" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
                 <span class="absolute top-3 left-3 bg-pinkSand text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">Collares</span>
             </div>
@@ -700,7 +696,7 @@
         </div>
 
         <div class="product-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-stone-100 flex flex-col group p-2" data-category="collares">
-            <div class="relative h-72 overflow-hidden bg-stone-50/70 rounded-[1.5rem] flex items-center justify-center p-2">
+            <div class="relative h-72 overflow-hidden bg-white rounded-[1.5rem] flex items-center justify-center p-2">
                 <img src="collar-fucsia.jpg" alt="Collar de Dijes Fucsia" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
                 <span class="absolute top-3 left-3 bg-dustyCoral text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">Collares</span>
             </div>
@@ -719,7 +715,7 @@
         </div>
 
         <div class="product-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-stone-100 flex flex-col group p-2" data-category="collares">
-            <div class="relative h-72 overflow-hidden bg-stone-50/70 rounded-[1.5rem] flex items-center justify-center p-2">
+            <div class="relative h-72 overflow-hidden bg-white rounded-[1.5rem] flex items-center justify-center p-2">
                 <img src="collar-pepas-marron.jpg" alt="Collar de Pepas Marrón" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
                 <span class="absolute top-3 left-3 bg-coconutShell text-softDaisy text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">Collares</span>
             </div>
@@ -738,7 +734,7 @@
         </div>
 
         <div class="product-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-stone-100 flex flex-col group p-2" data-category="collares">
-            <div class="relative h-72 overflow-hidden bg-stone-50/70 rounded-[1.5rem] flex items-center justify-center p-2">
+            <div class="relative h-72 overflow-hidden bg-white rounded-[1.5rem] flex items-center justify-center p-2">
                 <img src="collar-cuencas-sol.jpg" alt="Collar del Sol" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
                 <span class="absolute top-3 left-3 bg-softDaisy text-coconutShell text-xs font-bold px-3 py-1 rounded-full border border-coconutShell/20 shadow-sm z-10">Collares</span>
             </div>
@@ -757,7 +753,7 @@
         </div>
 
         <div class="product-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-stone-100 flex flex-col group p-2" data-category="collares">
-            <div class="relative h-72 overflow-hidden bg-stone-50/70 rounded-[1.5rem] flex items-center justify-center p-2">
+            <div class="relative h-72 overflow-hidden bg-white rounded-[1.5rem] flex items-center justify-center p-2">
                 <img src="conjunto-collares-estrella.jpg" alt="Set de Dos Collares con Estrella" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
                 <span class="absolute top-3 left-3 bg-dustyCoral text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">Collares</span>
             </div>
@@ -768,7 +764,7 @@
                 </div>
                 <div class="flex items-center justify-between pt-4 border-t border-stone-100">
                     <span class="text-lg font-bold text-coconutShell">8,00 €</span>
-                    <button onclick="addToCart('Set de Dos Collares with Estrella', 8.00)" class="bg-dustyCoral text-coconutShell px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors shadow-sm">
+                    <button onclick="addToCart('Set de Dos Collares con Estrella', 8.00)" class="bg-dustyCoral text-coconutShell px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors shadow-sm">
                         Agregar al carrito
                     </button>
                 </div>
@@ -776,7 +772,7 @@
         </div>
 
         <div class="product-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-stone-100 flex flex-col group p-2" data-category="collares">
-            <div class="relative h-72 overflow-hidden bg-stone-50/70 rounded-[1.5rem] flex items-center justify-center p-2">
+            <div class="relative h-72 overflow-hidden bg-white rounded-[1.5rem] flex items-center justify-center p-2">
                 <img src="collar-rosa.jpg" alt="Collar Rosa" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
                 <span class="absolute top-3 left-3 bg-pinkSand text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">Collares</span>
             </div>
@@ -795,7 +791,7 @@
         </div>
 
         <div class="product-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-stone-100 flex flex-col group p-2" data-category="collares">
-            <div class="relative h-72 overflow-hidden bg-stone-50/70 rounded-[1.5rem] flex items-center justify-center p-2">
+            <div class="relative h-72 overflow-hidden bg-white rounded-[1.5rem] flex items-center justify-center p-2">
                 <img src="collar-rojon.jpg" alt="Collar Rojón" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
                 <span class="absolute top-3 left-3 bg-dustyCoral text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">Collares</span>
             </div>
@@ -814,7 +810,7 @@
         </div>
 
         <div class="product-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-stone-100 flex flex-col group p-2" data-category="collares">
-            <div class="relative h-72 overflow-hidden bg-stone-50/70 rounded-[1.5rem] flex items-center justify-center p-2">
+            <div class="relative h-72 overflow-hidden bg-white rounded-[1.5rem] flex items-center justify-center p-2">
                 <img src="collar-rojode.jpg" alt="Collar Rojo De" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
                 <span class="absolute top-3 left-3 bg-dustyCoral text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">Collares</span>
             </div>
@@ -833,7 +829,7 @@
         </div>
 
         <div class="product-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-stone-100 flex flex-col group p-2" data-category="collares">
-            <div class="relative h-72 overflow-hidden bg-stone-50/70 rounded-[1.5rem] flex items-center justify-center p-2">
+            <div class="relative h-72 overflow-hidden bg-white rounded-[1.5rem] flex items-center justify-center p-2">
                 <img src="collar-pepas-verde.jpg" alt="Collar Verde Multicolor" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
                 <span class="absolute top-3 left-3 bg-softDaisy text-coconutShell text-xs font-bold px-3 py-1 rounded-full border border-coconutShell/20 shadow-sm z-10">Collares</span>
             </div>
@@ -853,7 +849,7 @@
 
         <!-- LENTES -->
         <div class="product-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-stone-100 flex flex-col group p-2" data-category="lentes">
-            <div class="relative h-72 overflow-hidden bg-stone-50/70 rounded-[1.5rem] flex items-center justify-center p-2">
+            <div class="relative h-72 overflow-hidden bg-white rounded-[1.5rem] flex items-center justify-center p-2">
                 <img src="lentes-amarillos.jpg" alt="Lentes Amarillos" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
                 <span class="absolute top-3 left-3 bg-dustyCoral text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">Lentes</span>
             </div>
@@ -872,7 +868,7 @@
         </div>
 
         <div class="product-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-stone-100 flex flex-col group p-2" data-category="lentes">
-            <div class="relative h-72 overflow-hidden bg-stone-50/70 rounded-[1.5rem] flex items-center justify-center p-2">
+            <div class="relative h-72 overflow-hidden bg-white rounded-[1.5rem] flex items-center justify-center p-2">
                 <img src="lentes-marrones.jpg" alt="Lentes Marrones" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
                 <span class="absolute top-3 left-3 bg-pinkSand text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">Lentes</span>
             </div>
@@ -891,7 +887,7 @@
         </div>
 
         <div class="product-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-stone-100 flex flex-col group p-2" data-category="lentes">
-            <div class="relative h-72 overflow-hidden bg-stone-50/70 rounded-[1.5rem] flex items-center justify-center p-2">
+            <div class="relative h-72 overflow-hidden bg-white rounded-[1.5rem] flex items-center justify-center p-2">
                 <img src="lentes-animalprint.jpg" alt="Lentes Animal Print" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
                 <span class="absolute top-3 left-3 bg-softDaisy text-coconutShell text-xs font-bold px-3 py-1 rounded-full border border-coconutShell/20 shadow-sm z-10">Lentes</span>
             </div>
@@ -911,7 +907,7 @@
 
         <!-- MONEDEROS -->
         <div class="product-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-stone-100 flex flex-col group p-2" data-category="monederos">
-            <div class="relative h-72 overflow-hidden bg-stone-50/70 rounded-[1.5rem] flex items-center justify-center p-2">
+            <div class="relative h-72 overflow-hidden bg-white rounded-[1.5rem] flex items-center justify-center p-2">
                 <img src="menedero-blanco-p_2.jpg" alt="Monedero Blanco con Puntos" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
                 <span class="absolute top-3 left-3 bg-softDaisy text-coconutShell text-xs font-bold px-3 py-1 rounded-full border border-coconutShell/20 shadow-sm z-10">Monederos</span>
             </div>
@@ -930,7 +926,7 @@
         </div>
 
         <div class="product-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-stone-100 flex flex-col group p-2" data-category="monederos">
-            <div class="relative h-72 overflow-hidden bg-stone-50/70 rounded-[1.5rem] flex items-center justify-center p-2">
+            <div class="relative h-72 overflow-hidden bg-white rounded-[1.5rem] flex items-center justify-center p-2">
                 <img src="monedero-negro.jpg" alt="Monedero Negro con Puntos" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
                 <span class="absolute top-3 left-3 bg-coconutShell text-softDaisy text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">Monederos</span>
             </div>
@@ -949,7 +945,7 @@
         </div>
 
         <div class="product-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-stone-100 flex flex-col group p-2" data-category="monederos">
-            <div class="relative h-72 overflow-hidden bg-stone-50/70 rounded-[1.5rem] flex items-center justify-center p-2">
+            <div class="relative h-72 overflow-hidden bg-white rounded-[1.5rem] flex items-center justify-center p-2">
                 <img src="monedero-marron-p_2.jpg" alt="Monedero Marrón con Puntos" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
                 <span class="absolute top-3 left-3 bg-pinkSand text-coconutShell text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">Monederos</span>
             </div>
@@ -968,8 +964,8 @@
         </div>
 
         <div class="product-card bg-white rounded-[2rem] overflow-hidden shadow-sm border border-stone-100 flex flex-col group p-2" data-category="monederos">
-            <div class="relative h-72 overflow-hidden bg-stone-50/70 rounded-[1.5rem] flex items-center justify-center p-2">
-                <img src="monedero-blanco.jpg" alt="Monedero Blanco con Puntos Negros" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
+            <div class="relative h-72 overflow-hidden bg-white rounded-[1.5rem] flex items-center justify-center p-2">
+                <img src="monedero-blanco.jpg" alt="Monedero Blanco with Puntos Negros" class="w-full h-full object-contain scale-115 group-hover:scale-125 transition-transform duration-500">
                 <span class="absolute top-3 left-3 bg-softDaisy text-coconutShell text-xs font-bold px-3 py-1 rounded-full border border-coconutShell/20 shadow-sm z-10">Monederos</span>
             </div>
             <div class="p-6 flex flex-col flex-grow justify-between">
@@ -1089,22 +1085,20 @@
 
     // Carrusel Automático del Hero
     const heroCarouselImages = [
-        { src: "fav-cartera-estrella.jpg", title: "Cartera Estrellas Trendy" },
-        { src: "fav-anillos.jpg", title: "Set de Anillos Brillantes" },
-        { src: "fav-pulseras.jpg", title: "Set de Pulseras Doradas" },
-        { src: "fav-cartera.jpg", title: "Cartera Charol Elegante" }
+        { src: "fav-cartera-estrella.jpg" },
+        { src: "fav-anillos.jpg" },
+        { src: "fav-pulseras.jpg" },
+        { src: "fav-cartera.jpg" }
     ];
     let currentHeroIndex = 0;
 
     setInterval(() => {
         currentHeroIndex = (currentHeroIndex + 1) % heroCarouselImages.length;
         const imgEl = document.getElementById('hero-carousel-img');
-        const titleEl = document.getElementById('hero-carousel-title');
-        if (imgEl && titleEl) {
+        if (imgEl) {
             imgEl.style.opacity = '0';
             setTimeout(() => {
                 imgEl.src = heroCarouselImages[currentHeroIndex].src;
-                titleEl.textContent = heroCarouselImages[currentHeroIndex].title;
                 imgEl.style.opacity = '1';
             }, 300);
         }
